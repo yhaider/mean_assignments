@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Javascript Library</title>
+        <script type="text/javascript">
+        var _ = {
+            map: function(arr, callback) {
+                for (var i = 0; i <arr.length; i++){
+                    arr[i] = callback(arr[i]);
+                }
+            },
+            reduce: function(arr, callback, memo) {
+                var count = 0;
+                if (!memo){
+                    memo = arr[0];
+                    count = 1;
+                }
+                for (var i = count; i < arr.length; i++){
+                    memo = callback(arr[i], memo);
+                }
+                return memo;
+            },
+            find: function(arr, callback) {
+                for (var i = 0; i < arr.length; i++){
+                    if (callback(arr[i])){
+                        return arr[i];
+                    }
+                }
+            },
+            filter: function(arr, callback) {
+                var answer = [];
+                for (i = 0; i < arr.length; i++){
+                    if(callback(arr[i])){
+                        answer.push(arr[i]);
+                    }
+                }
+                return answer;
+            },
+            reject: function(arr, callback) {
+                for (var i = 0; i < arr.length; i++){
+                    if(callback(arr[i])){
+                        arr.splice(i, 1);
+                    }
+                }
+                return arr;
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <h2>Assignment I: JavaScript Library</h2>
+            <p>Finish the five methods attached to the _ object to create your own custom library.  The purpose of this assignment is to show how a simple JavaScript library can be made.</p>
+
+            <p>Your mission is to build you own version of the underscore library. Try to get as close as you can to what underscore provides for each example below.</p>
+
+            <p>To create your own custom JavaScript library, you will just add methods to a JS object! (Later on when we teach you about immediate functions you’ll see how to make this more robust to build libraries like jQuery!).</p>
+
+            <p>Let’s build a few methods of underscore!</p>
+    </body>
+</html>

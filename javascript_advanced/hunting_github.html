@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hunting GitHub</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                    $('#show').click(function(){
+                        $.get("https://api.github.com/users/yhaider", displayUser);
+                    });
+                    function displayUser(info){
+                        if (info.name){
+                            document.getElementById('user').innerHTML = info.name;
+                        }
+                        else{
+                            document.getElementById('user').innerHTML = "Information unavailable."
+                        }
+                    }
+                    $('#reset').click(function(){
+                        document.getElementById('user').innerHTML = "";
+                    })
+                });
+        </script>
+    </head>
+    <body style = "background-color: azure;">
+    <div style = "width: 200px; background-color: aliceblue; border: 1px solid black; text-align: center; margin: auto; padding: 15px; margin-top: 100px;">
+    <h3>Look Up GitHub User to Find their name</h3>
+    <p><b>Name:</b> <span id = "user"></span></p>
+    <button id = "show" type="button" name="button">Click to Reveal</button>
+    <button id = "reset" type="button" name="button">Hide</button>
+    </div>
+
+    <div class="instructions" style = "width: 600px; background-color: aliceblue; border: 1px solid black; text-align: center; margin: auto; padding: 15px; margin-top: 30px;">
+        <h4>Instructions: Hunting GitHub</h4>
+        <p>Your objective is to create a button that when clicked will send an API request to the GitHub API (see above) and will display your name in a tag below the button.</p>
+    </div>
+    </body>
+</html>
