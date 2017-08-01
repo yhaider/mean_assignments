@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Class 2</title>
+        <script type="text/javascript">
+            function Ninja(name){
+                this.name = name;
+                this.health = 100;
+                var speed = 3;
+                var strength = 3;
+                this.showStats = function(){
+                    console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength);
+                    return this;
+                }
+                this.kick = function(ninja){
+                    if (ninja instanceof Ninja){
+                        var damage_inflicted = strength * 15;
+                        ninja.health -= damage_inflicted;
+                        console.log(ninja.name + " was kicked by " + this.name + " and lost " + damage_inflicted + " health!")
+
+                }
+            }
+            Ninja.prototype.drinkSake = function(){
+                this.health += 10;
+                return this;
+            }
+            Ninja.prototype.sayName = function(){
+                console.log("Hello my name is " + this.name + ".");
+                return this;
+            }
+
+            Ninja.prototype.punch = function(ninja){
+                var victim = ninja;
+                if (victim instanceof Ninja){
+                    victim.health -= 5;
+                    console.log(victim.name + " was punched by " + this.name + " and lost 5 health!")
+                }
+                else{
+                    console.log("The ninja that " + this.name + " is trying to punch does not exist.")
+                }
+            }
+        }
+
+
+
+
+            var yasmeen = new Ninja("yasmeen")
+            yasmeen.showStats();
+            yasmeen.drinkSake();
+            yasmeen.showStats();
+            yasmeen.sayName();
+            var isaac = new Ninja("isaac")
+            yasmeen.kick(isaac);
+        </script>
+    </head>
+    <body>
+        <h1>Ninja Class II: [See Ninja Class I first]</h1>
+        <p>Complete the below challenges using the Ninja Class from the previous assignment.</p>
+
+            <p>1.) .punch():
+            Add a new method to your Ninja class called .punch(). This method will take another Ninja instance and subtract 5 Health from the Ninja we passed in.</p>
+            <p>2.) .kick(): Now add a method to your Ninja class called .kick(). Kick will subtract 15 Health for each point of Strength the calling Ninja has, and like .punch() will take another Ninja instance.</p>
+            <p>3.) Validations: Update .punch() and .kick() so that they only accept Instances of the Ninja class. Hint: You will need to find a way to check the constructor of an instance. You will often need to consult outside documentation to find solutions for particular features.</p>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JS Intermediate</title>
+        <script type="text/javascript">
+            function star_string(num){
+                if (typeof num !== "number"){
+                    return "Error: input not an integer.";
+                }
+                else{
+                    var stars = "";
+                    for(var i = 1; i <= num; i++){
+                        stars += "*";
+                    }
+                    return stars;
+                }
+            }
+            console.log(star_string(8));
+
+            function draw_stars(arr){
+                if (typeof arr !== "object"){
+                    return "Error: input not an array.";
+                }
+                else{
+                    for (var i = 0; i < arr.length; i++){
+                        var stars = "";
+                        if (typeof arr[i] === "number"){
+                            for (var z = 1; z <= arr[i]; z++){
+                                stars += "*";
+                            }
+                            console.log(stars);
+                        }
+                        else{
+                            return "Error: not all values in array are integers.";
+                        }
+                    }
+                }
+            }
+
+            function draw_stars_v2(arr){
+                if (typeof arr !== "object"){
+                    return "Input not an array.";
+                }
+                else{
+                    for (var i = 0; i < arr.length; i ++){
+                        if (typeof arr[i] === "number"){
+                            var stars = "";
+                            for (var z = 1; z <= arr[i]; z++){
+                                stars += "*";
+                            }
+                            console.log(stars);
+                        }
+                        else if (typeof arr[i] === "string"){
+                            var letters = "";
+                            for(var y = 1; y <= arr[i].length; y++){
+                                letters += String((arr[i][0]).toLowerCase())
+                            }
+                            console.log(letters);
+                        }
+                    }
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Deck of Cards</title>
+        <script type="text/javascript">
+            class Deck{
+                constructor(){
+                    this.cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52];
+                    this.original = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52];
+                }
+                shuffle(){
+                    var s = this.cards.length, t, i;
+                    while (s){
+                        i = Math.floor(Math.random()* s--);
+                        t = this.cards[s];
+                        this.cards[s] = this.cards[i];
+                        this.cards[i] = t
+                    }
+                    console.log(this.cards);
+                }
+                reset(){
+                    this.cards = this.original;
+                    console.log(this.cards);
+                }
+                deal(){
+                    var rand = (Math.floor(Math.random()*this.cards.length));
+                    var card_dealt = this.cards[rand]
+                    this.cards.splice(rand,1);
+                    return card_dealt;
+                }
+            }
+
+            class Player{
+                constructor(name){
+                    this.name = name;
+                    this.hand = [];
+                }
+                showHand(){
+                    if (this.hand.length < 1){
+                        console.log(`${this.name} has no cards.`)
+                    }
+                    else{
+                        console.log(`${this.hand}`);
+                    }
+                }
+                draw(deck){
+                    var c = deck.deal();
+                    console.log(`${this.name} drew ${c}.`)
+                    this.hand.push(c)
+                    return this;
+                }
+                discard(num){
+                    if(this.hand.indexOf(num) > -1){
+                        var card_discard = this.hand.indexOf(num)
+                        this.hand.splice(card_discard);
+                        console.log(`${this.name} discarded ${num}.`)
+                        return this.hand;
+                    }
+                    else{
+                        console.log(`${this.name} does not have ${num}.`)
+                        return this.hand;
+                    }
+                }
+            }
+
+
+            var deck1 = new Deck();
+            deck1.shuffle();
+
+            var player1 = new Player("Yasmeen");
+            player1.draw(deck1);
+            player1.draw(deck1);
+            player1.showHand();
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

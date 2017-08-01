@@ -1,0 +1,37 @@
+<html>
+<body>
+    <h1>Students</h1>
+    <ul id="main">
+        <!-- this is empty-->
+    </ul>
+    <h1>Trying out super append</h1>
+    <section id="super">
+
+    </section>
+<script>
+    function appendList(array, id){
+        for (var i = 0; i < array.length; i++){
+            var new_item = document.createElement("li");
+            new_item.innerHTML = array[i];
+            document.getElementById(id).appendChild(new_item);
+        }
+    };
+    let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+    let target_id = "main";
+    appendList(students, target_id);
+
+    function super_appendList(array, element, id){
+        for (var i = 0; i < array.length; i++){
+            var new_item = document.createElement(element);
+            new_item.innerHTML = array[i];
+            document.getElementById(id).appendChild(new_item);
+        }
+    };
+
+    let arr = ["Hello", "my", "name", "is", "Yasmeen"];
+    let t_id = "super";
+    let elem = "p"
+    super_appendList(arr, elem, t_id);
+</script>
+</body>
+</html>

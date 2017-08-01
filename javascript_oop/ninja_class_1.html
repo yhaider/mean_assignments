@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Class I</title>
+        <script type="text/javascript">
+            function Ninja(name){
+                this.name = name;
+                this.health = 100;
+                var speed = 3;
+                var strength = 3;
+                this.showStats = function(){
+                    console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength);
+                    return this;
+                }
+            }
+            Ninja.prototype.drinkSake = function(){
+                this.health += 10;
+                return this;
+            }
+            Ninja.prototype.sayName = function(){
+                console.log("Hello my name is " + this.name + ".");
+                return this;
+            }
+
+            var yasmeen = new Ninja("yasmeen")
+            yasmeen.showStats();
+            yasmeen.drinkSake();
+            yasmeen.showStats();
+            yasmeen.sayName();
+        </script>
+    </head>
+    <body>
+        <h1>Ninja Class I</h1>
+        <p><b>Instructions:</b> Create a new class called Ninja with the following attributes:
+            name,
+            health,
+            speed (private),
+            and strength (private).
+            Speed and strength should be 3 by default. Health should be 100 by default.
+
+            The Ninja class should have the following methods:
+
+            1.) sayName() - This should log that Ninja's name to the console.
+            2.) showStats() - This should show the Ninja's Strength and Speed, as well as their health.
+            3.) drinkSake() - This should add +10 Health to the Ninja.</p>
+        <p>Check out the console to have fun.</p>
+    </body>
+</html>

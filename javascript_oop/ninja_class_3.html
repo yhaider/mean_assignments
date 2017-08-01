@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Class III</title>
+        <script type="text/javascript">
+            class Ninja{
+                constructor(name){
+                    this.name = name;
+                    this.health = 100;
+                    this.strength = 3;
+                    this.speed = 3;
+                }
+                sayName(){
+                    console.log(`My name is ${this.name}.`);
+                }
+                showStats(){
+                    console.log(`Name: ${this.name}, Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}`);
+                }
+                drinkSake(){
+                    this.health += 10;
+                    return this;
+                }
+                punch(ninja){
+                    if (ninja instanceof Ninja){
+                        ninja.health -= 5;
+                        console.log(`${ninja.name} was punched by ${this.name} and lost 5 health!`)
+                    }
+                    else{
+                        console.log(`The ninja ${this.name} is trying to punch does not exist.`)
+                    }
+                }
+                kick(ninja){
+                    if (ninja instanceof Ninja){
+                        var damage_inflicted = this.strength * 15;
+                        ninja.health -= damage_inflicted;
+                        console.log(`${ninja.name} was kicked by ${this.name} and lost ${damage_inflicted} health!`)
+                    }
+                    else{
+                        console.log(`The ninja ${this.name} is trying to kick does not exist.`)
+                    }
+
+                }
+            }
+
+            class Sensei extends Ninja{
+                constructor(name){
+                    super(name);
+                    this.health = 200;
+                    this.speed = 10;
+                    this.strength = 10;
+                    this.wisdom = 10;
+                }
+                showStats(){
+                    console.log(`Name: ${this.name}, Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}, Wisdom: ${this.wisdom}`)
+                }
+                speakWisdom(){
+                    super.drinkSake();
+                    console.log("What one programmer can do in one month, two programmers can do in two months...")
+                }
+            }
+
+            var yasmeen = new Ninja("Yasmeen")
+            yasmeen.showStats()
+            var isaac = new Ninja("Isaac")
+            yasmeen.kick(isaac)
+
+            var will = new Sensei("Will");
+            will.showStats()
+            will.speakWisdom()
+            will.showStats()
+        </script>
+    </head>
+    <body>
+        <h1>Ninja Class III</h1>
+        <p>Part I: Recreate the base Ninja class from scratch using ES6 classes. Your Ninja needs the following attributes:</p>
+        <p>- Name, Health, Speed, Strength</p>
+        <p>Speed and strength should be 3 by default. Health should be 100 by default.</p>
+
+        <p>The Ninja class should have the following methods:</p>
+        <p>1. sayName() - This should log that Ninja's name to the console.</p>
+        <p>2. showStats() - This should show the Ninja's Strength and Speed, as well as their health.</p>
+        <p>3. drinkSake() - This should add +10 Health to the Ninja</p>
+
+        <p>Part II - Sensei Class</p>
+        <p>Extend the Ninja class and create the Sensei class. A Sensei should have 200 Health, 10 speed, and 10 strength by default. In addition, a Sensei should have a new attribute called wisdom, and the default should be 10. Finally, add the speakWisdom() method. speakWisdom() should call the drinkSake() method from the Ninja class, before console.logging a wise message.</p>
+    </body>
+</html>
