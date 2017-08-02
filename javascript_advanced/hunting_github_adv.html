@@ -20,6 +20,12 @@
                         else{
                             document.getElementById('user').innerHTML = "Information unavailable."
                         }
+                        if(info.avatar_url){
+                            document.getElementById('image').innerHTML = "<img style = 'width: 150px; border: 1px solid black;' src = '" + info.avatar_url +"' alt = 'GitHub profile picture'>"
+                        }
+                        else{
+                            document.getElementById('image').innerHTML = "<i> No profile picture has been uploaded by " + info.name
+                        }
                     }
                 });
         </script>
@@ -27,9 +33,10 @@
     <body style = "background-color: azure;">
     <div style = "width: 200px; background-color: aliceblue; border: 1px solid black; text-align: center; margin: auto; padding: 15px; margin-top: 100px;">
     <h3>Search by GitHub UserName:</h3>
-    <form class="" method="post">
+    <form class="" method="post" style = "margin-bottom: 10px;">
         <input type="text" name="user" placeholder="Type in a github user to find the user's name..."> <input type="submit" name="search" value="Search">
     </form>
+    <span id="image"></span>
     <p><b>Name:</b> <span id = "user"></span></p>
     </div>
     <div class="instructions" style = "width: 600px; background-color: aliceblue; border: 1px solid black; text-align: center; margin: auto; padding: 15px; margin-top: 30px;">

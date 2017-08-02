@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+            function fib() {
+              var first = 0;
+              var next = 1;
+              function nacci() {
+                console.log(next);
+                var temp = first;
+                first = next;
+                next = next + temp;
+              }
+              return nacci
+            }
+            var fibCounter = fib();
+            fibCounter() // should console.log "1"
+            fibCounter() // should console.log "1"
+            fibCounter() // should console.log "2"
+            fibCounter() // should console.log "3"
+            fibCounter() // should console.log "5"
+            fibCounter() // should console.log "8"
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

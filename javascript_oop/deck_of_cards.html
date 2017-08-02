@@ -53,7 +53,7 @@
                 discard(num){
                     if(this.hand.indexOf(num) > -1){
                         var card_discard = this.hand.indexOf(num)
-                        this.hand.splice(card_discard);
+                        this.hand.splice(card_discard, 1);
                         console.log(`${this.name} discarded ${num}.`)
                         return this.hand;
                     }
