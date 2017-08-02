@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Counter</title>
+        <link rel="stylesheet" href="/stylesheet.css">
+    </head>
+    <body>
+        <div class="header">
+            <p>Counter</p>
+        </div>
+        <div class="counter">
+            <h3>Counter</h3>
+            <p><i>Refresh the page to increase the counter.</i></p>
+            <p><%= times %> times.</p>
+            <a href="/addtwo"><button type="button" name="button">+2</button></a>
+            <a href="/reset"><button type="button" name="button">Reset</button></a>
+        </div>
+        <div class="assignment">
+            <p><b>Assignment: Counter</b></p>
+            <p>Build an Express application that counts the number of times the root route ('/') has been viewed. This assignment is to test your understanding of session.</p>
+            <b>Ninja Level 1</b>
+            <p>Add a +2 button underneath the counter that reloads the page and increments counter by 2. Add another route to handle this functionality.</p>
+            <b>Ninja Level 2</b>
+            <p>Add a reset button that resets the counter back to 1. Add another route to handle this functionality.</p>
+        </div>
+    </body>
+</html>

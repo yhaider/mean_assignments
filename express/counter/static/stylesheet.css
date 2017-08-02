@@ -1,0 +1,35 @@
+body{
+    background-image: url('http://wallpapercave.com/wp/2T3qqti.png');
+    background-size: cover;
+}
+
+.header{
+    font: 100 30pt "Helvetica Neue", sans-serif;
+    color: #F7ECAD;
+    margin: auto;
+    text-align: center;
+}
+.counter{
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    width: 150px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font: 100 10pt "Helvetica Neue", sans-serif;
+    background-color: rgba(247, 236, 173, 0.75);
+    color: #232B28;
+}
+.assignment{
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    width: 1000px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font: 100 10pt "Helvetica Neue", sans-serif;
+    background-color: rgba(247, 236, 173, 0.75);
+    color: #232B28;
+}
