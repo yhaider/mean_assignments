@@ -1,0 +1,20 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.imgs{
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
+}
+
+form{
+    margin-left: 500px;
+    margin-top: 100px;
+    width: 200px;
+}
+
+.assignment{
+    margin: 20px 450px 0px 450px;
+}
