@@ -1,0 +1,62 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+.gng{
+    margin: auto;
+    text-align: center;
+    margin-top: 150px;
+    padding: 20px;
+    width: 1000px;
+    font-style: "Helvetica Neue", sans-serif;
+}
+.title{
+    font: 100 40pt "Helvetica Neue", sans-serif;
+}
+
+.text{
+    font: 100 25pt "Helvetica Neue", sans-serif;
+
+}
+
+input[type=submit]{
+    font: 100 10pt "Helvetica Neue", sans-serif;
+    background-color: floralwhite;
+    margin-top: 10px;
+    padding: 5px 10px 5px 10px;
+    border: none;
+}
+
+input[type=text]{
+    font: 100 15pt "Helvetica Neue", sans-serif;
+}
+button{
+    font: 100 10pt "Helvetica Neue", sans-serif;
+    background-color: azure;
+    margin-top: 10px;
+    padding: 5px 10px 5px 10px;
+    border: none;
+}
+
+body{
+    background-color: floralwhite;
+}
+
+.body{
+    background-color: azure;
+    padding: 20px 0px 20px 0px;
+}
+
+.status{
+    margin: auto;
+    text-align: center;
+    font: 100 17pt "Helvetica Neue", sans-serif;
+    width: 200px;
+    background-color: floralwhite;
+    padding: 10px;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
