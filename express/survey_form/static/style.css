@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image:url("http://img13.deviantart.net/0329/i/2015/340/c/b/dark_material_design_wallpaper__1_in_4k_by_tgs266-d9j7yts.png");
+    background-size: cover;
+}
+
+.survey p, .results p{
+    font: 100 30pt "Helvetica Neue", sans-serif;
+}
+
+
+
+
+.survey, .results{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    margin-top: 150px;
+    padding: 20px;
+    border: 1px solid #494949;
+    border-radius: 10px;
+    color: #F13030;
+    background-color: black;
+}
+.form, .info{
+    font: 100 15pt "Helvetica Neue", sans-serif;
+    text-align: left;
+    margin-top: 10px;
+    word-wrap: break-word;
+}
+.submit{
+    margin-left: 240px;
+}
+
+.right{
+    font: 100 13pt "Helvetica Neue", sans-serif;
+}
+.back{
+    margin-top: 10px;
+    font: 100 13pt "Helvetica Neue", sans-serif;
+}
