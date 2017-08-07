@@ -1,11 +1,10 @@
 var express = require("express");
-var fs = require("fs");
 var session = require("express-session");
 var port = 1234;
 var bodyparser = require("body-parser");
 var app = express();
 // Above are all our variables that pull in
-// express, fs, session, and body-parser
+// express, session, and body-parser
 
 app.use(session({secret: "code"}));
 app.set("view engine", "ejs");

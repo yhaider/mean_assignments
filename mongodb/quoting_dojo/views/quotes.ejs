@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Quotes</title>
+        <link rel="stylesheet" href="master.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                Quoting Dojo: Quotes
+            </div>
+            <div class="main">
+                <div class="">
+                    <% if (quotes) { %>
+                        <% for (var x in quotes){ %>
+                            <div class="quote">
+                                <p>Quote: <%= quotes[x].quote %></p>
+                                <p>Contributor: <%= quotes[x].name %></p>
+                            </div>
+                        <% } %>
+                    <% } %>
+                </div>
+                <a href="/"><button type="button" name="button">Back</button></a>
+            </div>
+        </div>
+    </body>
+</html>
