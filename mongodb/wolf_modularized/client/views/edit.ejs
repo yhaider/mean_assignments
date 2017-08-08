@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Edit</title>
+        <link rel="stylesheet" href="/wolf.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("#gender option[value='<%= wolf.gender %>']").prop('selected', true);
+            $("#status option[value='<%= wolf.status %>']").prop('selected', true);
+        });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                Edit Wolf: <%= wolf.name %>
+            </div>
+            <div class="main">
+                <form class="" action="/wolves/<%= wolf._id %>" method="post">
+                    <label>Name:</label><input type="text" name="name" value="<%= wolf.name %>"><br>
+                    <label>Status:</label><select id="status" name="status" ="<%= wolf.status %>">
+                        <option value = "Alpha">Alpha</option>
+                        <option value = "Beta">Beta</option>
+                        <option value = "Delta">Delta</option>
+                        <option value = "Omega">Omega</option>
+                    </select><br>
+                    <label>Age:</label><input type="number" name="age" value="<%= wolf.age %>"><br>
+                    <label>Gender:</label><select id="gender" name="gender" value="<%= wolf.gender %>">
+                        <option value = "Male">Male</option>
+                        <option value = "Female">Female</option>
+                    </select><br>
+                    <label>Color:</label><input type="text" name="color" value="<%= wolf.color %>"><br>
+                    <input type="submit" name="submit" value="Update">
+                </form>
+                <a href="/"><button type="button" name="button">Back to the Pack</button></a>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Wolf Pack</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                Wolves: Meet the Pack
+            </div>
+            <div class="main">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Identification Sheet</th>
+                        <th>Leave Pack</th>
+                    </tr>
+                    <% for(wolf of wolves) { %>
+                        <tr>
+                            <td>wolf.name</td>
+                            <td>wolf.status</td>
+                            <td><a href="/wolves/<%= wolf._id %>"><button type="button" name="button">View</button></a></td>
+                            <td><form class="" action="/destory/<%= wolf._id %>" method="post">
+                                <input type="submit" name="leave" value="Leave">
+                            </form></td>
+                        </tr>
+                    <% } %>
+                </table>
+                <a href="/wolves/new"><button type="button" name="button">Add</button></a>
+            </div>
+        </div>
+    </body>
+</html>

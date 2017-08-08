@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ID Sheet</title>
+        <link rel="stylesheet" href="wolf.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                <%= wolf.name %>
+            </div>
+            <div class="main">
+                <p>Name: <%= wolf.name %></p>
+                <p>Status: <%= wolf.status %></p>
+                <p>Age: <%= wolf.age %></p>
+                <p>Gender: <%= wolf.gender %></p>
+                <p>Color: <%= wolf.color %></p>
+                <a href="/"><button type="button" name="button">Back to the Pack</button></a>
+                <a href="/edit/<%= wolf._id %>"><button type="button" name="button">Edit</button></a>
+            </div>
+        </div>
+    </body>
+</html>

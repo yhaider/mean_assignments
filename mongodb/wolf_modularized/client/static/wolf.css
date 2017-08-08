@@ -1,0 +1,58 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+body{
+    background-color: darkslategrey;
+}
+
+.container{
+    margin-top: 150px;
+}
+
+.title{
+    margin: auto;
+    text-align: center;
+    font: 100 40pt "Helvetica Neue", sans-serif;
+    width: 600px;
+    color: whitesmoke;
+}
+.main{
+    margin: auto;
+    text-align: center;
+    width: 600px;
+    background-color: lightgray;
+    padding: 20px;
+    font: 100 16pt "Helvetica Neue", sans-serif;
+    color: darkslategrey;
+}
+
+input[type=submit]{
+    background-color: darkslategrey;
+    color: whitesmoke;
+    border: none;
+        padding: 5px 10px 5px 10px;
+    font: 100 10pt "Helvetica Neue", sans-serif;
+}
+button{
+    font: 100 10pt "Helvetica Neue", sans-serif;
+    padding: 5px 10px 5px 10px;
+    background-color: darkslategrey;
+    color: whitesmoke;
+    border: none;
+}
+
+/*EXTRA*/
+
+table{
+    text-align: center;
+    margin: auto;
+}
+
+td, th{
+    padding: 5px;
+    margin: 5px;
+    border: 0.5px solid black;
+}

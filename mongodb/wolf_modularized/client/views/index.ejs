@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Wolf Pack</title>
+        <link rel="stylesheet" href="/wolf.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                Wolves: Meet the Pack
+            </div>
+            <div class="main">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Identification Sheet</th>
+                        <th>Leave Pack</th>
+                    </tr>
+                    <% for(var x in wolves) { %>
+                        <tr>
+                            <td><%= wolves[x].name%></td>
+                            <td><%=wolves[x].status%></td>
+                            <td><a href="/<%= wolves[x]._id %>"><button type="button" name="button">View</button></a></td>
+                            <td><form class="" action="/destroy/<%= wolves[x]._id %>" method="post">
+                                <input type="submit" name="leave" value="Leave">
+                            </form></td>
+                        </tr>
+                    <% } %>
+                </table>
+                <a href="/new">Add</a>
+            </div>
+        </div>
+    </body>
+</html>
