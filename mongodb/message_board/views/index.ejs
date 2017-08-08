@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The Message Board</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                The Message Board
+            </div>
+            <div class="main">
+                <form class="" action="/post" method="post">
+                    Name: <input type="text" name="name" value=""><br>
+                    Message:
+                    <textarea name="message" rows="5" cols="60"></textarea><br>
+                    <input type="submit" name="submit" value="Post">
+                </form>
+            </div>
+            <div class="messages">
+                <p class = "subtitle"> Messages</p>
+                <% for(message of messages) { %>
+                    <div class="message">
+                        Name: <%= message.name %><br>
+                        Message: <%= message.message %><br>
+                        <div class="comments">
+                            <% for (comment of message._comments){ %>
+                                <hr class = "style-eight">
+                                <p>Name: <%= comment.name %></p>>
+                                <p>Comment: <%= comment.comment %></p>
+                                <hr class = "style-eight">
+                            <% } %>
+                            <form class="" action="/comment/<%= message._id %>" method="post">
+                                Name: <input type="text" name="name" value=""><br>
+                                Comment:<br>
+                                <textarea name="comment" rows="4" cols="30"></textarea><br>
+                                <input type="submit" name="submit" value="Comment">
+                            </form>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+
+        </div>
+    </body>
+</html>
