@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Edit</title>
+        <!-- <link rel="stylesheet" href="wolf.css"> -->
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                Edit Wolf: <%= wolf.name %>
+            </div>
+            <div class="main">
+                <form class="" action="/update/<%= wolf._id %>" method="post">
+                    <label>Name:</label><input type="text" name="name" value="<%= wolf.name %>"><br>
+                    <label>Status:</label><select class="" name="status" value="<%= wolf.status %>">
+                        <option>Alpha</option>
+                        <option>Beta</option>
+                        <option>Delta</option>
+                        <option>Omega</option>
+                    </select><br>
+                    <label>Age:</label><input type="number" name="age" value="<%= wolf.age %>"><br>
+                    <label>Gender:</label><select class="" name="gender" value="<%= wolf.gender %>">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select><br>
+                    <label>Color:</label><input type="text" name="color" value="<%= wolf.color %>"><br>
+                    <input type="submit" name="submit" value="Update">
+
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
