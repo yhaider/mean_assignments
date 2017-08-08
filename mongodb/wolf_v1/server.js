@@ -77,9 +77,6 @@ app.post('/update/:id', function(req, res){
 
 app.post('/destroy/:id', function(req, res){
     Wolf.remove({ _id: req.params.id}, function(req, res){
-        if(err){
-            console.log(err);
-        }
         res.redirect("/")
     })
 });

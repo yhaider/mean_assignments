@@ -23,7 +23,9 @@
                             <td><%= wolves[x].name %></td>
                             <td><%= wolves[x].status %></td>
                             <td><a href="/<%= wolves[x]._id %>"><button type="button" name="button">View</button></a></td>
-                            <td><a href="/destroy/<%= wolves[x]._id %>"><button type="button" name="button">Leave</button></a></td>
+                            <td><form class="" action="/destroy/<%= wolves[x]._id %>" method="post">
+                                <input type="submit" name="" value="Leave">
+                            </form></td>
                         </tr>
                     <% } %>
                 </table>
