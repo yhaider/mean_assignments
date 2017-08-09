@@ -5,4 +5,6 @@ var NameSchema = new mongoose.Schema({
 
 })
 
+// Our simple schema for each name in this project
+
 mongoose.model("Name", NameSchema)

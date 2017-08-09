@@ -1,6 +1,9 @@
 var mongoose = require("mongoose");
 var Name = mongoose.model('Name');
 
+// Similar to 'views' in Django, here
+// we show what happens at each route explicitly
+
 function Names(){
     this.index = function(req, res){
         Name.find({}, function(err, names){

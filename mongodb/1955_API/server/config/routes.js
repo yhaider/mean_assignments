@@ -1,5 +1,8 @@
 var names = require('../controllers/names.js');
 
+// Here it shows what methods to follow under our
+// controller
+
 module.exports = function(app){
     app.get('/', names.index);
     // Display all names of people born in 1955
