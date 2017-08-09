@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Welcome</title>
+        <link rel="stylesheet" href="/login_reg.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                Welcome to Login and Registration
+            </div>
+            <div class="main">
+                <div class="subtitle">
+                    Login
+                </div>
+                <%if(typeof(login_errs) != "undefined"){%>
+                    <div class="errors">
+                        <%for(err in login_errs){%>
+                                <%=login_errs[err]%>
+                        <%}%>
+                    </div>
+                <%}%>
+                <form class="" action="/login" method="post">
+                    Email: <input type="text" name="email" value=""><br>
+                    Password: <input type="password" name="pass" value=""><br>
+                    <input type="submit" name="login" value="Login">
+                </form>
+                <div class="subtitle">
+                    Registration
+                </div>
+                <%if(typeof(registration_errs) != "undefined"){%>
+                    <div class="errors">
+                        <%for(err in registration_errs){%>
+                                <%=registration_errs[err]%>
+                        <%}%>
+                    </div>
+                <%}%>
+                <form class="" action="/register" method="post">
+                    First Name: <input type="text" name="first_name" value=""><br>
+                    Last Name: <input type="text" name="last_name" value=""><br>
+                    Email: <input type="text" name="email" value=""><br>
+                    Birthday: <input type="date" name="birthday" value=""><br>
+                    Password: <input type="password" name="password" value=""><br>
+                    Confirm: <input type="password" name="password_confirm" value=""><br>
+                    <input type="submit" name="register" value="Register">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,2 +1,12 @@
-
+socket.io/survey_form/node_modules
+socket.io/first_socket/node_modules
+express/counter/node_modules
+express/great_number_game/node_modules
+express/survey_form/node_modules
 mongodb/demo
+mongodb/1955_API/node_modules
+mongodb/basic_mongoose_app/node_modules
+mongodb/message_board/node_modules
+mongodb/quoting_dojo/node_modules
+mongodb/wolf_modularized/node_modules
+mongodb/wolf_unmodularized/node_modules

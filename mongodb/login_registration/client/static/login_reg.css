@@ -1,0 +1,83 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+body{
+    background-color: floralwhite;
+}
+
+.container{
+    margin-top: 100px;
+}
+
+.title{
+    margin: auto;
+    text-align: center;
+    font: 100 40pt "Helvetica Neue", sans-serif;
+    width: 600px;
+    color: darkslategrey;
+}
+.subtitle{
+    font-size: 30pt;
+}
+.main{
+    margin: auto;
+    text-align: center;
+    width: 600px;
+    background-color: azure;
+    padding: 20px;
+    font: 100 16pt "Helvetica Neue", sans-serif;
+}
+
+input[type=submit]{
+    background-color: floralwhite;
+    border: none;
+        padding: 5px 10px 5px 10px;
+    font: 100 10pt "Helvetica Neue", sans-serif;
+}
+button{
+    font: 100 10pt "Helvetica Neue", sans-serif;
+    padding: 5px 10px 5px 10px;
+    background-color: floralwhite;
+    border: none;
+}
+
+form{
+    text-align: left;
+    margin-top: 10px;
+}
+
+/*EXTRA*/
+.messages{
+    margin: auto;
+    text-align: center;
+    width: 800px;
+    background-color: azure;
+    padding: 20px;
+    font: 100 13pt "Helvetica Neue", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.message{
+    margin: auto;
+    text-align: center;
+    width: 400px;
+    background-color: floralwhite;
+    padding: 20px;
+    font: 100 13pt "Helvetica Neue", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.comments{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    background-color: azure;
+    padding: 20px;
+    font: 100 11pt "Helvetica Neue", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
