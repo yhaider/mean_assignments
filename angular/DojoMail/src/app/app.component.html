@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class = "header">
+    <h1>Dojo Mail</h1>
+</div>
+<div class="emails">
+    <table>
+        <tr>
+            <th>Email</th>
+            <th>Importance</th>
+            <th>Subject</th>
+            <th>Context</th>
+        </tr>
+        <tr *ngFor = "let object of emails">
+            <td>{{ object.email }}</td>
+            <td>{{ object.importance }}</td>
+            <td>{{ object.subject }}</td>
+            <td>{{ object.context }}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+table{
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.header{
+    margin: auto;
+    text-align: center;
+    font-size: 40pt;
+}
+
+td, th{
+    padding: 5px;
+}
+
+th{
+    font-size: 20pt;
+}
