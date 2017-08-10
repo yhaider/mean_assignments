@@ -1,0 +1,11 @@
+<div class="header">
+    Retro Barcode Generator
+</div>
+<div class="assgn">
+    This assignment had us create ten boxes that randomly generate different colors, and with each refresh, the boxes change colours. Try it!
+</div>
+<div class="boxes">
+    <div *ngFor = "let color of colors" class = "box" [ngStyle] = "{'background-color': color}">
+
+    </div>
+</div>
