@@ -1,0 +1,34 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+.header{
+    margin: auto;
+    text-align: center;
+    font-size: 40pt;
+}
+
+.explain{
+    margin: auto;
+    text-align: center;
+    font-size: 10pt;
+}
+.buttons{
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+button{
+    padding: 5px 10px 5px 10px;
+}
+.time{
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20pt;
+
+}

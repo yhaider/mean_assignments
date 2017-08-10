@@ -1,0 +1,16 @@
+<div class="header">
+    US Time Zone Display
+</div>
+<div class="explain">
+    Click on a button to change the timezone. Defaults to EST.
+</div>
+<div class="buttons">
+    <button (click)="tzChange({timezone: 'EST', offset: 0})" type="button" name="button">EST</button>
+    <button (click)="tzChange({timezone: 'CST', offset: 1})" type="button" name="button">CST</button>
+    <button (click)="tzChange({timezone: 'MST', offset: 2})" type="button" name="button">MST</button>
+    <button (click)="tzChange({timezone: 'PST', offset: 3})" type="button" name="button">PST</button>
+    <button (click)="tzChange({timezone: 'Clear', offset: 0})" type="button" name="button">Clear</button>
+
+<div class="time">
+    {{ date | date: "medium" : current_zone }} {{ current_zone }}
+</div>
