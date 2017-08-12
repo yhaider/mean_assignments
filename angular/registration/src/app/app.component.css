@@ -1,0 +1,40 @@
+.header{
+    font: 100 40pt "Helvetica Neue", sans-serif;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.confirm{
+    font: 100 15pt "Helvetica Neue", sans-serif;
+    font-style: italic;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container{
+    width: 700px;
+    background-color: floralwhite;
+    margin: auto;
+    text-align: center;
+    font: 100 20pt "Helvetica Neue", sans-serif;
+}
+
+form{
+    text-align: left;
+    margin-top: 10px;
+    font: 100 15pt "Helvetica Neue", sans-serif;
+}
+
+.errors{
+    font: 100 10pt "Helvetica Neue", sans-serif;
+    font-style: italic;
+    margin-left: 20px;
+}
+
+input, input[type=submit], input[type=select]{
+    font: 100 15pt "Helvetica Neue", sans-serif;
+}
