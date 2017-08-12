@@ -15,7 +15,8 @@ export class AppComponent {
       }
       else{
           this.current_zone = change.timezone;
-          this.date = this.date.setHours(this.date.getHours() - change.offset)
+        // Timezone change does not work
+        //   this.date = this.date.setHours(this.date.getHours() - change.offset)
       }
   }
 

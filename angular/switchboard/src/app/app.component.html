@@ -1,0 +1,9 @@
+<div class="header">
+    SwitchBoard
+</div>
+<div class="board">
+    <button *ngFor = "let switch of switchboard; let ind = index" [ngClass]="{'ON': switchboard[ind] === 'ON', 'OFF': switchboard[ind] === 'OFF'}" (click)="flip(ind)"> {{ switch }}</button>
+</div>
+<div class="explain">
+    Click a switch to change it from 'ON' to 'OFF' and visa versa.
+</div>

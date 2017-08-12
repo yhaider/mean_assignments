@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+.ON{
+    color: green;
+}
+
+.OFF{
+    color: red;
+}
+
+.board, .header{
+    margin: auto;
+    text-align: center;
+}
+
+.header{
+    font: 100 40pt "Helvetica Neue", sans-serif;
+    padding: 10px;
+}
+
+button{
+    font: 100 10pt "Helvetica Neue", sans-serif;
+    padding: 5px 10px 5px 10px;
+    margin: 5px;
+}
+
+.explain{
+    margin: auto;
+    text-align: center;
+    font: 100 15pt "Helvetica Neue", sans-serif;
+}
