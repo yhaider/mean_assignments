@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font:inherit;
+}
+
+.division_nav{
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    width: 200px;
+    background-color: lavender;
+    border: 1px solid black;
+    font: 100 10pt "Helvetica Neue", sans-serif;
+    margin-left: 200px;
+    margin-right: 160px;
+    height: 400px;
+}
+
+.division_nav p {
+    text-align: left;
+}
+
+ul li{
+    list-style: none;
+}
+
+button{
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 2px;
+}

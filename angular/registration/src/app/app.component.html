@@ -3,7 +3,7 @@
         Registration
     </div>
     <div class="confirm" *ngIf = "new_user">
-        <p>Thank you for registering with us, {{ this.new_user.fname }}. We just sent you a confimation email to {{this.new_user.email}} and we will send all mail to {{ this.new_user.street}}<span *ngIf="this.all_users[this.users.length-1].unit"> {{this.new_user.unit}}</span>, {{this.new_user.city}} {{this.new_user.state}}. <span *ngIf="this.new_user.lucky == true">We are glad you are feeling lucky!</span><span *ngIf="this.new_user.lucky == false">We hope that registering with us has made you feel a little more lucky!</span></p>
+        <p>Thank you for registering with us, {{ this.new_user.fname }}. We just sent you a confimation email to {{this.new_user.email}} and we will send all mail to {{ this.new_user.street }}<span *ngIf="this.all_users[this.all_users.length-1].unit"> {{this.new_user.unit }}</span>, {{this.new_user.city}} {{this.new_user.state}}.</p>
         <p>Have a wonderful day.</p>
     </div>
     <div class="container">

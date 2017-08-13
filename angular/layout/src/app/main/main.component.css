@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+.division_main{
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    width: 500px;
+    background-color: lavender;
+    border: 1px solid black;
+    font: 100 15pt "Helvetica Neue", sans-serif;
+    margin-right: 240px;
+}
+
+.division_main p{
+    text-align: left;
+}
+
+.comp{
+    font-size: 10pt;
+    text-align: left;
+    
+}
