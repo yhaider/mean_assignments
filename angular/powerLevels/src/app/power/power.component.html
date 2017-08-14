@@ -1,0 +1,18 @@
+<div class="all">
+    <h2>Power Levels</h2>
+    <form (submit) = "getPower()">
+        Initial Power Level: <select name="initial" [(ngModel)] = "initial">
+            <option *ngFor = "let i of range">{{ i }}</option>
+        </select>
+    </form>
+
+    <div class="sections">
+        <app-level type="Human" [initial] = "initial" multiplier = "1"></app-level>
+        <app-level type="Saiyan" [initial] = "initial" multiplier = "10"></app-level>
+        <app-level type="SuperSaiyan" [initial] = "initial" multiplier = "90"></app-level>
+        <app-level type="SuperSaiyanTwo" [initial] = "initial" multiplier = "150"></app-level>
+        <app-level type="SuperSaiyanThree" [initial] = "initial" multiplier = "250"></app-level>
+        <app-level type="SuperSaiyanFour" [initial] = "initial" multiplier = "500"></app-level>
+
+    </div>
+</div>

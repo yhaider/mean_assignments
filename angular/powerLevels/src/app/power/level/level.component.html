@@ -1,0 +1,11 @@
+<div class="section">
+    <p class="title">{{ type }}</p>
+    <div class="results">
+            <p>Power Level: <span *ngIf= "initial"> {{ initial * multiplier }} </span></p>
+        <div class="status">
+            <span *ngIf = "(initial * multiplier) > 9000 && (initial * multiplier) < 20000">Over 9000!</span>
+            <span *ngIf = "(initial * multiplier) >= 20000 && (initial * multiplier) < 50000">Superlative!</span>
+            <span *ngIf = "(initial * multiplier) >= 50000">The One</span>
+        </div>
+    </div>
+</div>

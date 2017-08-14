@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font:inherit;
+}
+
+.section{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    width: 150px;
+    height: 90px;
+}
+
+.title{
+    font-size: 15pt;
+}
+
+.results{
+    font-size: 13pt;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.status{
+    margin:auto;
+    text-align: center;
+    font-style: italic;
+    font-size: 14pt;
+}

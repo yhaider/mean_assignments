@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+    font: 100 40pt "Helvetica Neue", sans-serif;
+}
+
+.sections{
+    display: inline-flex;
+    font: 100 40pt "Helvetica Neue", sans-serif;
+}
+
+app-level{
+    padding: 10px;
+}
+
+form{
+    font-size:20pt;
+}
+
+select{
+    font-size: 15pt;
+}
+
+.all{
+    margin: auto;
+    text-align: center;
+}
