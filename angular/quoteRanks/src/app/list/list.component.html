@@ -1,0 +1,13 @@
+<div style="margin: auto; text-align: center;">
+    <h2>Quotes List</h2>
+    <table *ngIf="all_quotes[0]">
+    <tr *ngFor="let quote of all_quotes; let ind = index">
+        <td>{{ quote.quote }}</td>
+        <td>{{ quote.author }}</td>
+        <td>{{ quote.rating }}</td>
+        <td><button (click) = "delete(ind)">Delete</button>
+            <button (click) = "increment(ind)">Vote Up</button>
+            <button (click) = "decrease(ind)">Vote Down</button></td>
+    </tr>
+    </table>
+</div>
