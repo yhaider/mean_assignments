@@ -10,6 +10,7 @@ export class ListComponent implements OnInit {
     @Input() set quotes(val){
         this.all_quotes = val;
     };
+    // This inputs new values into all_quotes
   constructor() { }
 
   ngOnInit() {
@@ -26,5 +27,6 @@ export class ListComponent implements OnInit {
   decrease(ind){
       this.all_quotes[ind].rating -= 1;
   }
-
+  // The above three deal with the rating and deleting the quote all together
+  // They run on the click of their respective buttons and pull the index from the html
 }

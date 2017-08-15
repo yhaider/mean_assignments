@@ -11,7 +11,10 @@ export class AddComponent implements OnInit {
         author: "",
         rating: 0,
     }
+    // This is the basic structure of a new quote
+
     @Output() addQuote = new EventEmitter();
+    // This outputs the addQuote up to the parent component
   constructor() { }
 
   ngOnInit() {
@@ -25,4 +28,8 @@ export class AddComponent implements OnInit {
             rating: 0,
         }
     }
+    // When the form is submitted this runs
+    // It adds into newquote, emits it up to the parent,
+    // and then it refreshes newquote to its empty, original
+    // state.
 }

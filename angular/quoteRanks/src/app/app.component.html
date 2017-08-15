@@ -2,3 +2,7 @@
     <app-add (addQuote)="pullData($event)"></app-add>
     <app-list [quotes] = "quotes"></app-list>
 </div>
+
+<!-- Ties the eventemitter addQuote to the function pullData which is
+    defined in app.component.ts
+    Also data binds quotes -->

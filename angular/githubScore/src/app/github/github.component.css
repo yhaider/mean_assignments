@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+.all{
+    display: inline-flex;
+}
+
+.form{
+    width: 400px;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+    font: 100 40pt "Helvetica Neue", sans-serif;
+}
+
+form{
+    font-size: 20pt;
+}
+
+input[type=submit]{
+    font: 100 10pt "Helvetica Neue", sans-serif;
+}
+
+.score{
+    width: 400px;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+    margin-left: 10px;
+    font: 100 30pt "Helvetica Neue", sans-serif;
+}
+
+.status{
+    text-align: center;
+    font: 100 20pt "Helvetica Neue", sans-serif;
+    font-style: italic;
+}
+
+.err{
+    font-size: 10pt;
+    font-style: italic;
+}

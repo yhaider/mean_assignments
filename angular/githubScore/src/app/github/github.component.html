@@ -1,0 +1,24 @@
+<div class="all">
+    <div class="form">
+        <h2>GitHub Score</h2>
+        <form #form = "ngForm"  name="form" method="post" (submit) = "onSubmit(username)">
+            GitHub Username: <input [(ngModel)] = "user.username" type="text" name="username" required placeholder="Your github here..."><br>
+            <input type="submit" name="" value="Calculate GitHub Score" [disabled] = "form.invalid">
+            <span *ngIf = "user.username.invalid" class="err">Please enter a username.</span><br>
+            <span *ngIf = "err" class="err">Please enter a valid username.</span><br>
+        </form>
+    </div>
+    <!-- Above is the div holding the form to enter a github username. If requirements are not met,
+    user will be unable to submit the form. If there is an error/the username does not exist on GitHub,
+    then it will notify the user that an invalid username has been entered. -->
+    <div class="score">
+        Score: {{ this.user.score }}<br>
+        <span *ngIf = "this.user.score < 20 && this.user.score != ''" style = "color: red;" class="status">Needs work!</span>
+        <span *ngIf = "this.user.score < 50 && this.user.score >= 20" style = "color: orange;" class="status">A decent start!</span>
+        <span *ngIf = "this.user.score >= 50 && this.user.score < 100" class="status">Doing good!</span>
+        <span *ngIf = "this.user.score < 200 && this.user.score >= 100" style = "color: green;" class="status">Great job!</span>
+        <span *ngIf = "this.user.score >= 200" style = "color: blue;" class="status">GitHub Elite!</span>
+    </div>
+    <!-- Above projects the score (public_repos + followers) for the username provided and its status. Depending on the
+    status, the color font changes in accordance to guidelines for the assignment. -->
+</div>
