@@ -7,5 +7,8 @@ var WolfSchema = new mongoose.Schema({
     gender: {type: String, required: true, minlength: 4},
     color: {type: String, required: true, minlength: 3},
 })
+// This is our schema for the Wolf
+// It has all validations and the different
+// pieces of information we need
 
 mongoose.model("Wolf", WolfSchema)

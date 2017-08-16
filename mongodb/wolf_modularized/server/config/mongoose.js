@@ -8,3 +8,6 @@ fs.readdirSync(models_path).forEach(function(file){
         require(models_path + '/' + file);
     }
 });
+// Connecting our app to our database so we can
+// store data! It will generate a new database with
+// this name if it does not already exist

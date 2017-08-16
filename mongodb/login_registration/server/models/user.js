@@ -59,6 +59,11 @@ var UserSchema = new mongoose.Schema({
         }
     }
 },{timestamps:true});
+// This is the user schema which has the different
+// pieces of information we need to store (we get from registration)
+// and it has all validations done here
+
+
 
 UserSchema.pre('save', function(done){
     bcrypt.hashSync(this.password, bcrypt.genSaltSync(14), function(err, hashedpw){
@@ -70,6 +75,8 @@ UserSchema.pre('save', function(done){
         this.password_confirm = null;
         done();
     });
+// This part is activated before a new user is saved to the database
+// It encrypts the password by salting it 14 times using bcrypt
 
 });
 

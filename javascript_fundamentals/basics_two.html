@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!-- Again, a basic assignment where we were given several test
+conditions our function magic_multiply(x,y) had to pass when
+passed two variables. All tests were passed and are below. -->
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -29,16 +33,26 @@
                 }
             }
 
+        //Tests to Pass: All Passed
+
         let test1 = magic_multiply(5, 2);
             console.log(test1);
+            // Should multiply the two numbers
         let test2 = magic_multiply(0, 0);
             console.log(test2);
+            // Since both inputs are zero, it should state
+            // that all inputs are zero
         let test3 = magic_multiply([1, 2, 3], 2);
             console.log(test3);
+            // Should multiply each number in the array
+            // with the second variable passed in
+            // and return an array of answers
         let test4 = magic_multiply(7, "three");
             console.log(test4);
+            // Should state that a string cannot be multiplied
         let test5 = magic_multiply("Brendo", 4);
             console.log(test5);
+            // Should return the string "Brendo" four times
         </script>
     </head>
     <body>

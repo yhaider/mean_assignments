@@ -9,6 +9,8 @@
                     this.cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52];
                     this.original = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52];
                 }
+                // A deck has 52 cards, so for this assignment,
+                // an array of 52 numbers is used
                 shuffle(){
                     var s = this.cards.length, t, i;
                     while (s){
@@ -19,16 +21,25 @@
                     }
                     console.log(this.cards);
                 }
+                // This shuffles the cards using Math.random and
+                // Math.floor for the randomness
+
                 reset(){
                     this.cards = this.original;
                     console.log(this.cards);
                 }
+                // Quickly resets the cards by setting them to their
+                // original state
+
                 deal(){
                     var rand = (Math.floor(Math.random()*this.cards.length));
                     var card_dealt = this.cards[rand]
                     this.cards.splice(rand,1);
                     return card_dealt;
                 }
+                // Picks a card randomly and deals it to a user
+                // Gets rid of the card from the deck so it cannot
+                // be dealt again
             }
 
             class Player{
@@ -36,6 +47,8 @@
                     this.name = name;
                     this.hand = [];
                 }
+                // Each player has a name and a hand
+
                 showHand(){
                     if (this.hand.length < 1){
                         console.log(`${this.name} has no cards.`)
@@ -44,12 +57,18 @@
                         console.log(`${this.hand}`);
                     }
                 }
+                // Displays the user's hand
+
                 draw(deck){
                     var c = deck.deal();
                     console.log(`${this.name} drew ${c}.`)
                     this.hand.push(c)
                     return this;
                 }
+                // Draws a card randomly from a deck of choice
+                // which is passed into the function and instantiates
+                // the deal() method that decks have onto that deck
+
                 discard(num){
                     if(this.hand.indexOf(num) > -1){
                         var card_discard = this.hand.indexOf(num)
@@ -62,9 +81,11 @@
                         return this.hand;
                     }
                 }
+                // Checks if the user has the card first and then
+                // gets rid of it if they do, and if not it notifies players
             }
 
-
+            // Trial
             var deck1 = new Deck();
             deck1.shuffle();
 

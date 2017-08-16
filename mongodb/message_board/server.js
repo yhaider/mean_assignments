@@ -39,6 +39,8 @@ app.get("/", function(req, res){
         res.render('index.ejs', {messages: results});
 	});
 });
+// This populates the root route with messages and their comments
+
 
 app.post("/post", function(req, res){
     var newMessage = new Message({name: req.body.name, message: req.body.message});
@@ -53,6 +55,8 @@ app.post("/post", function(req, res){
     		}
     	})
 });
+// This adds a message into the database if it has passed validations
+// Otherwise it displays an error
 
 app.post("/comment/:id", function(req, res){
 	Message.findOne({_id: req.params.id}, function(err, message){
@@ -78,7 +82,13 @@ app.post("/comment/:id", function(req, res){
 		});
 	});
 })
+// This section allows for a user to comment on someones post/message
+// It uses the id in the root parameter to identify which post/message
+// the comment is associated with
+// As usual, it will add the comment to the database if it passes validations
+// and will redirect to the main root where the new comment will be visible
 
 app.listen(8000, function(){
     console.log("Ready to go on port 8000...");
 })
+// Without listening we cannot see our app run

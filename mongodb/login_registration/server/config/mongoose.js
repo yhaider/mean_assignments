@@ -8,3 +8,6 @@ fs.readdirSync(models_path).forEach(function(file){
         require(models_path + '/' + file);
     }
 });
+
+// This section connects our program to our database
+// If that database does not exist, it will create it

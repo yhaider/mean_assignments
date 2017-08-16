@@ -7,6 +7,9 @@ function Users(){
         req.session.destroy();
         res.render('index');
     }
+    // This is the page which prompts users
+    // to either login or register, so any existing
+    // logged in user must be removed from session
 
     this.add = function(req, res){
         User.find({email:req.body.email},function(err,users){
@@ -27,6 +30,9 @@ function Users(){
             }
         })
     }
+    // This method adds a user into the database if there
+    // are no validation errors, otherwise it will display the errors
+
     this.home = function(req, res){
         if(!req.session.name){
             res.redirect("/");
@@ -35,12 +41,17 @@ function Users(){
             res.render('home', {name: req.session.name});
         }
     }
+    // This is where the user is redirected after logging
+    // in or registering so their name is stored in session to
+    // be accessible across the website while they are active
 
     this.logout = function(req, res){
         req.session.destroy();
         console.log('Logging out...')
         res.redirect('/');
     }
+    // This logs the user out by redirecting to index
+    // and clearing any data stored in session
 
     this.login = function(req, res){
         let errs = [];
@@ -74,5 +85,8 @@ function Users(){
         });
     }
 }
+// This logs a user in if they exist, have registered, and have
+// inputted valid information that matched the database
+
 var users = new Users();
 module.exports = users;
