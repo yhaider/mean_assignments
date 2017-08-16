@@ -1,0 +1,11 @@
+<!-- This has all been very lightly styled with css for nicer viewing -->
+
+<div class="all">
+    <h2>Dojo Weather Forecast</h2>
+    <a [routerLink]="['burbank']">Burbank, CA</a> | <a [routerLink]="['chicago']">Chicago, IL</a> | <a [routerLink]="['dallas']">Dallas, TX</a> | <a [routerLink]="['sanjose']">San Jose, CA</a> | <a [routerLink]="['seattle']">Seattle, WA</a> | <a [routerLink]="['dc']">Washington, D.C.</a>
+    <!-- The above stays the same regardless of where
+    you are routed to, since it is the navigation panel of
+    sorts. The routerLinks determine where each link goes to -->
+    <router-outlet></router-outlet>
+    <!-- The router outlet is where the changes all happen! -->
+</div>

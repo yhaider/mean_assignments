@@ -1,0 +1,26 @@
+<div class="city">
+    <h3>{{ weather.name }}</h3>
+    <div class="stuff">
+        <div class="img">
+            <img *ngIf="weather.id==4140963" src="https://static.pexels.com/photos/8185/pexels-photo.jpg" alt="DC">
+            <img *ngIf="weather.id==4885983"src="https://wutrafficlight.files.wordpress.com/2013/12/2351232954_56754a7bf3.jpg" alt="Burbank">
+            <img *ngIf="weather.id==4887398"src="http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1446655168/chicago-header-dg1115.jpg?itok=MqZFOaTi" alt="Chicago">
+            <img *ngIf="weather.id==5809844"src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Space_Needle002.jpg/1200px-Space_Needle002.jpg" alt="Seattle">
+            <img *ngIf="weather.id==5392171"src="http://cityhub.movoto.com/1465380325589_San-Jose-f1.jpg" alt="San Jose">
+            <img *ngIf="weather.id==4190598"src="http://www.mikehourigan.com/wp-content/uploads/2011/10/keynote-speaker-dallas-tx.jpg" alt="Dallas">
+            <!-- This determines which image to show based on the weather ID that
+            we access through the information that we pulled -->
+        </div>
+        <div class="info">
+            <p><b>Humidity:</b> {{ weather.main.humidity }}</p>
+            <p><b>Status:</b> {{ weather.weather[0].description }}</p>
+            <p><b>Wind Speed:</b> {{ weather.wind.speed }} mph</p>
+            <p><b>Temperature:</b> {{ weather.main.temp }}°F</p>
+            <p><b>High:</b> {{ weather.main.temp_max }}°F</p>
+            <p><b>Low:</b> {{ weather.main.temp_min }}°F</p>
+            <!-- This div presents the information we pulled from the API
+            If we print out {{ weather | json }}, it shows all information
+            for that city's weather in a JSON format -->
+        </div>
+    </div>
+</div>

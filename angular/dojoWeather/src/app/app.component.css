@@ -1,0 +1,17 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+h2{
+    font: 100 40pt "Helvetica Neue", sans-serif;
+}
+a{
+    font:100 10pt "Helvetica Neue", sans-serif;
+}
+
+.all{
+    margin:auto;
+    text-align: center;
+}

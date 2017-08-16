@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+.city{
+    border: 1px solid black;
+    padding: 10px;
+    width: 700px;
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+}
+img{
+    width: 300px;
+    border: 1px solid black;
+}
+
+h3{
+    font: 100 30pt "Helvetica Neue", sans-serif;
+}
+
+b{
+    font: 100 17pt "Helvetica Neue", sans-serif;
+}
+
+p{
+    font: 100 15pt "Helvetica Neue", sans-serif;
+}
+.stuff{
+    display: inline-flex;
+    margin-top: 10px;
+}
+.info{
+    margin-left: 10px;
+}
