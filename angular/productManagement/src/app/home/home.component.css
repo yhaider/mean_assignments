@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+
+.home{
+    width: 600px;
+    margin:auto;
+    text-align: center;
+    text-align: left;
+}
+
+h3{
+    font-size: 17pt;
+}
+
+i{
+    font-style: italic;
+}

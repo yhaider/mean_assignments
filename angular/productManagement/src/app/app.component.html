@@ -1,0 +1,9 @@
+<div class="all">
+    <div class="header">
+        <h2>PPM - Project Product Management</h2>
+        <a [routerLink] = "['']">Home</a> | <a [routerLink] = "['products']">Product List</a> | <a [routerLink] = "['products', 'new']">Product Creation</a>
+    </div>
+    <div class="router">
+        <router-outlet (addProduct) = "onSubmit($event)"></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="allnew">
+    <div class="new">
+        <h3>Create a New Product</h3>
+        <form #addNew="ngForm" method="post" (submit) = "onSubmit()">
+            <div class="title">
+                Title: <input
+                        type="text"
+                        name="title"
+                        placeholder="Title"
+                        required
+                        [(ngModel)] = "product.title"
+                        minlength = "4"><br>
+                <span *ngIf = "product.title.invalid">Title must be at least 4 characters.</span><br>
+            </div>
+            <div class="price">
+                Price: <input
+                        type="text"
+                        name="price"
+                        required
+                        [(ngModel)] = "product.price"
+                        placeholder = "--.--"
+                        pattern = "^[0-9]+(\.[0-9]{2})?$"><br>
+                <span *ngIf = "product.price.invalid">Price is required and must be in valid format.</span><br>
+            </div>
+            <div class="url">
+                Image URL: <input
+                            type="text"
+                            name="url"
+                            [(ngModel)] = "product.url"
+                            placeholder = "Input image url..."><br>
+            </div><br>
+            <div class="submit">
+                <input type="submit" name="submit" value="Submit" [disabled] = "addNew.invalid">
+            </div>
+        </form>
+    </div>
+</div>
