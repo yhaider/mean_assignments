@@ -3,6 +3,8 @@
     <form (submit) = "getPower()">
         Initial Power Level: <select name="initial" [(ngModel)] = "initial">
             <option *ngFor = "let i of range">{{ i }}</option>
+            <!-- Uses our array from 1-100 to create a select bar
+            where initial power can be grabbed from -->
         </select>
     </form>
 
@@ -13,6 +15,8 @@
         <app-level type="SuperSaiyanTwo" [initial] = "initial" multiplier = "150"></app-level>
         <app-level type="SuperSaiyanThree" [initial] = "initial" multiplier = "250"></app-level>
         <app-level type="SuperSaiyanFour" [initial] = "initial" multiplier = "500"></app-level>
-
+        <!-- By using data binding, we can pass on data within our parent and child
+        components. Type is specified instead of making six separate components
+        for each type in order to make it easier -->
     </div>
 </div>

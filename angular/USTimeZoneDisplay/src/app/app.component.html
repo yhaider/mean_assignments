@@ -10,7 +10,7 @@
     <button (click)="tzChange({timezone: 'MST', offset: 2})" [ngClass] = "{'active': timezone === 'MST'}" type="button" name="button" >MST</button>
     <button (click)="tzChange({timezone: 'PST', offset: 3})" [ngClass] = "{'active': timezone === 'PST'}" type="button" name="button" >PST</button>
     <button (click)="tzChange({timezone: 'Clear', offset: 0})" type="button" name="button">Clear</button>
-
+    
 <div class="time">
     {{ date | date: "medium" : current_zone }} {{ current_zone }}
 </div>

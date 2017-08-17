@@ -1,4 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div class = "header">
     <h1>Dojo Mail</h1>
 </div>
@@ -11,6 +10,9 @@
             <th>Context</th>
         </tr>
         <tr *ngFor = "let object of emails">
+            <!-- Looping through the emails and then
+            pulling the exact piece of info we want in
+            each table cell -->
             <td>{{ object.email }}</td>
             <td>{{ object.importance }}</td>
             <td>{{ object.subject }}</td>

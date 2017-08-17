@@ -21,6 +21,9 @@ let randomizer = function(){
         return "#9099A2";
     }
 }
+// This function picks a number randomly between
+// 1 and 6 (inclusive) and generates a hex code for
+// a different color
 
 @Component({
   selector: 'app-root',
@@ -40,4 +43,8 @@ export class AppComponent {
         randomizer(),
         randomizer()
     ]
+    // All our colors are
+    // just instances of the randomizer() function
+    // so that each time the page is loaded,
+    // the box colors will be different
 }

@@ -3,6 +3,8 @@
 </div>
 <div class="board">
     <button *ngFor = "let switch of switchboard; let ind = index" [ngClass]="{'ON': switchboard[ind] === 'ON', 'OFF': switchboard[ind] === 'OFF'}" (click)="flip(ind)"> {{ switch }}</button>
+    <!-- Notice how the index of the button is also pulled
+    when for-looping through our array -->
 </div>
 <div class="explain">
     Click a switch to change it from 'ON' to 'OFF' and visa versa.

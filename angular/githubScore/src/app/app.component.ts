@@ -7,5 +7,8 @@ import { TaskService } from './task.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
 }
+
+// Nothing going on in here other than
+// the presets

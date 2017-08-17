@@ -26,4 +26,8 @@ export class AppComponent {
           context: "Here are the end of day goals..."
       },
   ]
+  // The above are emails to be displayed on our route
+  // They are in dictionaries so each piece of information
+  // can be easily retrieved apart from the others
+  // All are stored in an array so it can be looped through
 }

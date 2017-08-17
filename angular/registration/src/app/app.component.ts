@@ -16,6 +16,7 @@ class User {
         public updated_at: Date = new Date()
     ){}
 }
+// This is the user class with all information we would need
 
 @Component({
   selector: 'app-root',
@@ -34,5 +35,6 @@ export class AppComponent {
       this.user = new User();
       console.log(`${this.user.fname} has been registered.`)
   }
+  // This adds a new user to the database
 
 }
