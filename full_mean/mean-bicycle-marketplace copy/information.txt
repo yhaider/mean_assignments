@@ -1,0 +1,1 @@
+This project was our exam reviewer, which several of us all sat down and coded together as a group. While we could not finish the entire assignment, we used this as an opportunity to better understand full MEAN.

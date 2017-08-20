@@ -1,0 +1,20 @@
+# Functions
+function ang2starter() {
+    mkdir -p "mean-"$1
+    cd "mean-"$1
+    cp -rf ~/coding_projects/resources/ang2-starter/* .
+    npm install
+    ng new $1 --routing --skip-git
+    mv $1 public
+    npm add @angular/cli --dev
+    echo node_modules/"\n"public/node_modules/ > .gitignore
+    git init
+    git add -A
+    git commit -m "Ang2starter generated commit."
+    mv proxy.conf.json public/
+    jq '.scripts.start = "ng serve --proxy-config proxy.conf.json"' public/package.json > tmp.$$.json && mv tmp.$$.json public/package.json
+}
+
+function meanServe() {
+	cd public && npm run start & cd .. && nodemon server.js
+}

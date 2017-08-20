@@ -1,0 +1,110 @@
+<!-- Will Comment -->
+<div class="auth">
+    <div class="login">
+        <form method="post" #loginForm = "ngForm" (submit) = "login()">
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Email:
+                    <input
+                        type="text"
+                        name="email"
+                        [(ngModel)] = "loginuser.email"
+                        #email = "ngModel"
+                        required>
+                    </label><br>
+                </div>
+                <div class="input-errs"></div>
+            </div>
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Password:
+                        <input
+                            type="text"
+                            name="password"
+                            [(ngModel)] = "loginuser.password"
+                            #password = "ngModel"
+                            minLength = "8"
+                            required>
+                    </label><br>
+                </div>
+                <div class="input-errs"></div>
+            </div>
+            <button type="submit" [disabled] = "loginForm.invalid">Login</button>
+        </form>
+    </div>
+
+    <div class="registration">
+        hello
+        <form method="post" #registerForm = "ngForm" (submit) = "register()">
+            <div class="input-container">
+                <div class="input-field">
+                    <label>First Name:
+                    <input
+                        type="text"
+                        name="first_name"
+                        [(ngModel)] = "registeruser.first_name"
+                        #firstName = "ngModel"
+                        minLength = "2"
+                        required>
+                    </label>
+                </div>
+                <div class="input-errs"></div>
+            </div>
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Last Name:
+                    <input
+                        type="text"
+                        name="last_name"
+                        [(ngModel)] = "registeruser.last_name"
+                        #lastName = "ngModel"
+                        minLength = "2"
+                        required>
+                    </label>
+                </div>
+                <div class="input-errs"></div>
+            </div>
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Email:
+                    <input
+                        type="text"
+                        name="email"
+                        [(ngModel)] = "registeruser.email"
+                        #email = "ngModel"
+                        required>
+                    </label>
+                </div>
+                <div class="input-errs"></div>
+            </div>
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Password:
+                    <input
+                        type="text"
+                        name="password"
+                        [(ngModel)] = "registeruser.password"
+                        #password = "ngModel"
+                        minLength = "8"
+                        required>
+                    </label><br>
+                </div>
+                <div class="input-errs"></div>
+            </div>
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Password Confirmation:
+                    <input
+                        type="text"
+                        name="passwordconfirm"
+                        [(ngModel)] = "registeruser.passwordconfirm"
+                        #passwordconfirm = "ngModel"
+                        required>
+                    </label>
+                </div>
+                <div class="input-errs"></div>
+            </div>
+            <button type="submit" [disabled] = "registerForm.invalid">Register</button>
+        </form>
+    </div>
+</div>

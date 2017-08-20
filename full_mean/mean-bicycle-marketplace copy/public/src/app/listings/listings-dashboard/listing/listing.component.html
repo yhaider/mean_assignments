@@ -1,0 +1,67 @@
+<div class="card">
+    <form (submit)="updateListing()" method="post" #myForm = "ngForm">
+        <!-- When the form is submitted, it will run the updateListing() function -->
+        <div class="image-container">
+
+        </div>
+        <div class="content-container">
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Title:</label>
+                    <input
+                        type="text"
+                        name="title"
+                        [(ngModel)] = "listing.title"
+                        #title = "ngModel"
+                        required><br>
+                </div>
+                <div *ngIf = "title.invalid" class="input-errs"></div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Description:</label>
+                    <input
+                        type="text"
+                        name="description"
+                        [(ngModel)] = "listing.description"
+                        #description = "ngModel"
+                        maxLength = "200"
+                        required><br>
+                </div>
+                <div *ngIf = "description.invalid" class="input-errs"></div>
+            </div>
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Location:</label>
+                    <input
+                        type="text"
+                        name="location"
+                        [(ngModel)] = "listing.location"
+                        #location = "ngModel"
+                        required><br>
+                </div>
+                <div *ngIf = "location.invalid" class="input-errs"></div>
+            </div>
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Price:</label>
+                    <input
+                        type="number"
+                        name="price"
+                        [(ngModel)] = "listing.price"
+                        #price = "ngModel"
+                        required><br>
+                </div>
+                <div *ngIf = "location.invalid" class="input-errs"></div>
+            </div>
+
+        </div>
+        <button type="submit" name="button" [disabled] = "myForm.invalid">Update</button>
+        <button type="button" name="button" (click)="deleteListing()">Delete</button><br>
+        <!-- When clicked this will remove the listing by running the deleteListing() function -->
+        <div *ngIf = "error" class="error-from-backend">
+            <span>{{ error | json }}</span>
+        </div>
+    </form>
+</div>

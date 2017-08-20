@@ -1,0 +1,72 @@
+<div class="">
+    <h2>Create Listing</h2>
+    <div class="card">
+        <form (submit)="createListing()" method="post" #myForm = "ngForm">
+            <!-- See that on the submit event, we will run the createListing()
+            function in our listings-new.component.ts -->
+
+            <div class="content-container">
+                <div class="input-container">
+                    <div class="input-field">
+                        <label>Title:</label>
+                        <input
+                            type="text"
+                            name="title"
+                            [(ngModel)] = "newBike.title"
+                            #title = "ngModel"
+                            required><br>
+                            <!-- For each input, we set that
+                            input as an attribute in our newBike
+                            which will be passed to our BikeService -->
+                    </div>
+                    <div *ngIf = "title.invalid" class="input-errs"></div>
+                    <!-- Below each input we deal with showing our errors -->
+                </div>
+
+                <div class="input-container">
+                    <div class="input-field">
+                        <label>Description:</label>
+                        <input
+                            type="text"
+                            name="description"
+                            [(ngModel)] = "newBike.description"
+                            #description = "ngModel"
+                            maxLength = "200"
+                            required><br>
+                    </div>
+                    <div *ngIf = "description.invalid" class="input-errs"></div>
+                </div>
+                <div class="input-container">
+                    <div class="input-field">
+                        <label>Location:</label>
+                        <input
+                            type="text"
+                            name="location"
+                            [(ngModel)] = "newBike.location"
+                            #location = "ngModel"
+                            required><br>
+                    </div>
+                    <div *ngIf = "location.invalid" class="input-errs"></div>
+                </div>
+                <div class="input-container">
+                    <div class="input-field">
+                        <label>Price:</label>
+                        <input
+                            type="number"
+                            name="price"
+                            [(ngModel)] = "newBike.price"
+                            #price = "ngModel"
+                            required><br>
+                    </div>
+                    <div *ngIf = "location.invalid" class="input-errs"></div>
+                </div>
+
+            </div>
+            <button type="submit" name="button" [disabled] = "myForm.invalid">Create</button><br>
+            <div *ngIf = "error" class="error-from-backend">
+                <span>{{ error | json }}</span>
+                <!-- Here our errors will show as well -->
+            </div>
+        </form>
+    </div>
+</div>

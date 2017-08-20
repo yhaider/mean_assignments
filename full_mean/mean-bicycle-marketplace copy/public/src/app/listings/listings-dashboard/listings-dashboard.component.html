@@ -1,0 +1,5 @@
+<div class="">
+    <h2>edit/delete</h2>
+    <app-listing *ngFor="let listing of _listings" [listing]="listing" (bikeDeleted) = "updateBike()"></app-listing>
+    <!-- Event emitter and our for-loop -->
+</div>

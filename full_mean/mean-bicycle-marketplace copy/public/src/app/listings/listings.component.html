@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="navlinks">
+        <a [routerLink] = "['browse']">Browse</a>
+        <a [routerLink] = "['listings']">My Listings</a>
+        <a [routerLink] = "['logout']">Logout</a>
+    </div>
+    <!-- The above links to different routes -->
+
+    <app-listings-new (madeBike) ="getBikes()"></app-listings-new>
+    <!-- Here we have an event emitter and below we have an
+    event emitter and data binding -->
+    <app-listings-dashboard (bikeUpdated)="getBikes()" [listings] = "listings"></app-listings-dashboard>
+</div>
