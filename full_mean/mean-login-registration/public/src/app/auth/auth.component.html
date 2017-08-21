@@ -1,0 +1,99 @@
+<div class="auth">
+
+    <div class="login">
+        <form #loginForm = "ngForm" (submit) = "login()" method="post">
+            <label>Email:
+                <input
+                    type="text"
+                    name="email"
+                    [(ngModel)] = "loginuser.email"
+                    #email = "ngModel"
+                    minLength = "6"
+                    required>
+                <span *ngIf = "email.invalid">Please enter a valid email.</span>
+            </label><br>
+            <label>Password:
+                <input
+                    type="text"
+                    name="password"
+                    [(ngModel)] = "loginuser.password"
+                    #password = "ngModel"
+                    minLength = "8"
+                    pattern="^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$"
+                    required>
+                <span *ngIf = "password.invalid">Please enter a valid password.</span>
+            </label><br>
+            <label>
+                <input type="submit" [disabled] = "loginForm.invalid" value="Login">
+            </label>
+        </form>
+    </div><br>
+    <div class="register">
+        <form #registerForm = "ngForm" method="post" (submit) = "register()">
+            <label>First Name:
+                <input
+                    type="text"
+                    name="fname"
+                    [(ngModel)] = "registeruser.fname"
+                    #fname = "ngModel"
+                    minLength = "2"
+                    required>
+                <span *ngIf = "fname.invalid">Please enter a valid first name.</span>
+            </label><br>
+            <label>Last Name:
+                <input
+                    type="text"
+                    name="lname"
+                    [(ngModel)] = "registeruser.lname"
+                    #lname = "ngModel"
+                    minLength = "2"
+                    required>
+                <span *ngIf = "lname.invalid">Please enter a valid last name. </span>
+            </label><br>
+            <label>Age:
+                <input
+                    type="number"
+                    name="age"
+                    [(ngModel)] = "registeruser.age"
+                    #age = "ngModel"
+                    min = "18"
+                    required>
+                <span *ngIf = "age.invalid">Please enter a valid age.</span>
+            </label><br>
+            <label>Email:
+                <input
+                    type="text"
+                    name="email"
+                    [(ngModel)] = "registeruser.email"
+                    #email = "ngModel"
+                    minLength = "6"
+                    pattern="^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$"
+                    required>
+                <span *ngIf = "email.invalid">Please enter a valid email.</span>
+            </label><br>
+            <label>Password:
+                <input
+                    type="text"
+                    name="password"
+                    [(ngModel)] = "registeruser.password"
+                    #password = "ngModel"
+                    minLength = "8"
+                    required>
+                <span *ngIf = "password.invalid">Please enter a valid password.</span>
+            </label><br>
+            <label>Password Confirmation:
+                <input
+                    type="text"
+                    name="passwordconfirm"
+                    [(ngModel)] = "registeruser.passwordconfirm"
+                    #passwordconfirm = "ngModel"
+                    minLength = "8"
+                    required>
+                <span *ngIf = "registeruser.password !== registeruser.passwordconfirm">Please ensure your passwords match.</span>
+            </label><br>
+            <label>
+                <input type="submit" [disabled] = "registerForm.invalid" value="Register">
+            </label>
+        </form>
+    </div>
+</div>
