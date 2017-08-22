@@ -17,6 +17,7 @@ export class AskComponent implements OnInit {
         description: "",
         answers: [],
         user: this.name,
+        answernum: 0
     }
 
 

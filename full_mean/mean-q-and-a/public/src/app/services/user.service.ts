@@ -21,4 +21,9 @@ export class UserService {
       .toPromise();
   }
 
+  logout(){
+      return this._http.get('/api/logout')
+      .map((response: Response) => response.json())
+      .toPromise();
+  }
 }

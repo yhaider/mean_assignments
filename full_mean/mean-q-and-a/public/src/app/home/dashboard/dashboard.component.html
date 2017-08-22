@@ -1,3 +1,14 @@
-<p>
-  dashboard works!
-</p>
+<div class="">
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Answers</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor = "let question of _questions">
+            <td>{{ question.question }}</td>
+            <td>{{ question.answernum }}</td>
+            <td><a [routerLink] = "['/show', question._id]">Show</a> || <a [routerLink] = "['/answer', question._id]">Answer</a></td>
+        </tr>
+    </table>
+</div>

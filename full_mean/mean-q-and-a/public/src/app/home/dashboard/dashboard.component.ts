@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { QuestionService } from '../../services/question.service';
 
 @Component({
@@ -9,7 +9,10 @@ import { QuestionService } from '../../services/question.service';
 export class DashboardComponent implements OnInit {
 
     private _questions: Array<any> = []
-
+    @Input() set questions(newquestions){
+        this._questions = newquestions
+    }
+    
   constructor(
       private _qs: QuestionService
   ) { }

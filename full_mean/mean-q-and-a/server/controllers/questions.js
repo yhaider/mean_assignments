@@ -20,5 +20,14 @@ module.exports = {
             }
             return res.json(question);
         });
+    },
+
+    showOne: function (req, res) {
+        Question.findOne({_id: req.params.id}, (err, question) => {
+            if(err) {
+                return res.status(500).json(err)
+            }
+            return res.json(question)
+        })
     }
 }

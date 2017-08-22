@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { QuestionService } from '../services/question.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
       private _us: UserService,
-      private _qs: QuestionService
+      private _qs: QuestionService,
+      private _route: Router
   ) { }
 
   private questions: Array<object>
@@ -33,5 +35,10 @@ export class HomeComponent implements OnInit {
       this._qs.getQuestions()
       .then(data => this.questions = data)
       .catch(err => console.log(err))
+  }
+
+  logout(){
+      this._us.logout()
+      .then(data => this._route.navigateByUrl('/'))
   }
 }

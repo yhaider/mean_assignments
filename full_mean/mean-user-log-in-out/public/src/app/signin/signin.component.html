@@ -1,0 +1,24 @@
+<div class="">
+    <form #myForm = "ngForm" (submit) = "signin()" method="post">
+        <label>
+            Username:
+            <input
+                type="text"
+                name="username"
+                [(ngModel)] = "login.username"
+                #username = "ngModel"
+                required>
+        </label><br>
+
+        <label>
+            Email:
+            <input
+                type="text"
+                name="email"
+                [(ngModel)] = "login.email"
+                #email = "ngModel"
+                required>
+        </label><br>
+        <input type="submit" name="submit" value="Submit" [disabled] = "myForm.invalid">
+    </form>
+</div>

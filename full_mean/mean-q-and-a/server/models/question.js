@@ -14,9 +14,15 @@ const QuestionSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+	answernum: {
+		type: Number,
+		required: true,
+		default: 0
+	},
     _answers: {
         type: Schema.Types.ObjectId,
-        ref: 'Answer'
+        ref: 'Answer',
+		default: []
     }
 }, {timestamps: true})
 const Question = mongoose.model('Question', QuestionSchema)

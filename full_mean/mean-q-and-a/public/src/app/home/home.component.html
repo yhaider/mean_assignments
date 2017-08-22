@@ -1,7 +1,7 @@
 <div class="">
     <h2>Welcome, {{ name }}!</h2>
     <div class="">
-    <a [routerLink] = "['/ask']">Ask a Question</a> || <a [routerLink] = "['/']">Logout</a>
+    <a [routerLink] = "['/ask']">Ask a Question</a> || <a (click) = "logout()">Logout</a>
     </div>
 </div>
 <app-dashboard [questions] = "questions"></app-dashboard>

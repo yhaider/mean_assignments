@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs';
-import 'rx/Rx';
-import 'rxjs/add/operate/map';
-import 'rxjs/add/operate/toPromise';
+
 
 @Injectable()
 export class QuestionService {
@@ -28,4 +26,15 @@ export class QuestionService {
        .map((response: Response) => response.json())
        .toPromise();
   }
+  // This adds a question to the database and talks to
+  // our backend (routes.js, to be specific) to make
+  // the API call
+
+
+  showOne(id) {
+      return this._http.get(`/api/questions/${id}`)
+      .map((response: Response) => response.json())
+      .toPromise()
+  }
+
 }

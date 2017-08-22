@@ -1,0 +1,11 @@
+<div class="">
+    <div class="">
+        <a [routerLink] = "['/answer', question._id]">Answer</a> || <a [routerLink] = "['/home']">Back</a>
+    </div>
+    <h2>{{ question.question }}</h2>
+    <span *ngIf = "question.description"><p>{{ question.description }}</p></span>
+    <p>Answers: {{ question._answers }}</p>
+    <div *ngFor = "let answer of question._answers">
+
+    </div>
+</div>
