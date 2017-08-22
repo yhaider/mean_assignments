@@ -7,7 +7,7 @@
         </tr>
         <tr *ngFor = "let question of _questions">
             <td>{{ question.question }}</td>
-            <td>{{ question.answernum }}</td>
+            <td>{{ question._answers.length }}</td>
             <td><a [routerLink] = "['/show', question._id]">Show</a> || <a [routerLink] = "['/answer', question._id]">Answer</a></td>
         </tr>
     </table>

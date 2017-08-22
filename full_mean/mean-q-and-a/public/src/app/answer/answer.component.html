@@ -1,8 +1,30 @@
-<div class="">
-    <form #answerForm = "ngForm" method="post">
+<div class="" *ngIf = "question">
+    <form #answerForm = "ngForm" method="post" (submit) = "answer()">
+        <h2>Answer:</h2>
+        <h3>{{ question.question }}</h3>
         <label>
-            
-        </label>
+            Your Answer:<br>
+            <input
+                type="text"
+                name="answer"
+                placeholder = "Your answer..."
+                [(ngModel)] = "answer.answer"
+                #answer = "ngModel"
+                required>
+        </label><br>
 
+        <label>
+            Supporting Details (optional):<br>
+            <input
+                type="text"
+                name="extra"
+                placeholder = "Any details..."
+                [(ngModel)] = "answer.extra"
+                #extra = "ngModel">
+        </label><br>
+        <input type="submit" name="submit" value="Submit" [disabled] = "answerForm.invalid">
     </form>
+    <a [routerLink] = "['/home']">Back</a><br>
+    {{ question | json }}<Br>
+    {{ user | json }}
 </div>

@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/answer/answer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"\">\n    <form #answerForm = \"ngForm\" method=\"post\">\n        <label>\n            \n        </label>\n\n    </form>\n</div>\n"
+module.exports = "<div class=\"\" *ngIf = \"question\">\n    <form #answerForm = \"ngForm\" method=\"post\" (submit) = \"answer()\">\n        <h2>Answer:</h2>\n        <h3>{{ question.question }}</h3>\n        <label>\n            Your Answer:<br>\n            <input\n                type=\"text\"\n                name=\"answer\"\n                placeholder = \"Your answer...\"\n                [(ngModel)] = \"answer.answer\"\n                #answer = \"ngModel\"\n                required>\n        </label><br>\n\n        <label>\n            Supporting Details (optional):<br>\n            <input\n                type=\"text\"\n                name=\"extra\"\n                placeholder = \"Any details...\"\n                [(ngModel)] = \"answer.extra\"\n                #extra = \"ngModel\">\n        </label><br>\n        <input type=\"submit\" name=\"submit\" value=\"Submit\" [disabled] = \"answerForm.invalid\">\n    </form>\n    <a [routerLink] = \"['/home']\">Back</a><br>\n    {{ question | json }}<Br>\n    {{ user | json }}\n</div>\n"
 
 /***/ }),
 
@@ -44,6 +44,9 @@ module.exports = "<div class=\"\">\n    <form #answerForm = \"ngForm\" method=\"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnswerComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_question_service__ = __webpack_require__("../../../../../src/app/services/question.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -54,10 +57,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var AnswerComponent = (function () {
-    function AnswerComponent() {
+    function AnswerComponent(_us, _qs, _route, _router) {
+        this._us = _us;
+        this._qs = _qs;
+        this._route = _route;
+        this._router = _router;
+        this.answer = {
+            answer: "",
+            extra: "",
+            user: this.user,
+            likes: 0,
+            _question: this.question
+        };
     }
     AnswerComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._us.getID()
+            .then(function (data) { return _this.user = data; })
+            .catch(function (err) { return console.log(err); });
+        this.subscription = this._route.paramMap
+            .switchMap(function (params) {
+            return _this._qs.showOne(params.get('id'));
+        })
+            .subscribe(function (question) { return _this.question = question; });
+    };
+    AnswerComponent.prototype.ngOnDestroy = function () {
+        this.subscription.unsubscribe();
+    };
+    AnswerComponent.prototype.answerQuestion = function () {
+        var _this = this;
+        this._qs.answer(this.answer)
+            .then(function (data) { return _this._router.navigateByUrl("/home"); })
+            .catch(function (err) { return console.log(err); });
     };
     return AnswerComponent;
 }());
@@ -67,9 +102,10 @@ AnswerComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/answer/answer.component.html"),
         styles: [__webpack_require__("../../../../../src/app/answer/answer.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_question_service__["a" /* QuestionService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_question_service__["a" /* QuestionService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _d || Object])
 ], AnswerComponent);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=answer.component.js.map
 
 /***/ }),
@@ -437,7 +473,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "th, td{\n    padding: 10px;\n    border: 1px solid black;\n\n}\n", ""]);
 
 // exports
 
@@ -450,7 +486,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"\">\n    <table>\n        <tr>\n            <th>Question</th>\n            <th>Answers</th>\n            <th>Actions</th>\n        </tr>\n        <tr *ngFor = \"let question of _questions\">\n            <td>{{ question.question }}</td>\n            <td>{{ question.answernum }}</td>\n            <td><a [routerLink] = \"['/show', question._id]\">Show</a> || <a [routerLink] = \"['/answer', question._id]\">Answer</a></td>\n        </tr>\n    </table>\n</div>\n"
+module.exports = "<div class=\"\">\n    <table>\n        <tr>\n            <th>Question</th>\n            <th>Answers</th>\n            <th>Actions</th>\n        </tr>\n        <tr *ngFor = \"let question of _questions\">\n            <td>{{ question.question }}</td>\n            <td>{{ question._answers.length }}</td>\n            <td><a [routerLink] = \"['/show', question._id]\">Show</a> || <a [routerLink] = \"['/answer', question._id]\">Answer</a></td>\n        </tr>\n    </table>\n</div>\n"
 
 /***/ }),
 
@@ -643,6 +679,11 @@ var QuestionService = (function () {
             .map(function (response) { return response.json(); })
             .toPromise();
     };
+    QuestionService.prototype.answer = function (answer) {
+        return this._http.post('/api/answers', answer)
+            .map(function (response) { return response.json(); })
+            .toPromise();
+    };
     return QuestionService;
 }());
 QuestionService = __decorate([
@@ -728,7 +769,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/show/show.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"\">\n    <div class=\"\">\n        <a [routerLink] = \"['/answer', question._id]\">Answer</a> || <a [routerLink] = \"['/home']\">Back</a>\n    </div>\n    <h2>{{ question.question }}</h2>\n    <span *ngIf = \"question.description\"><p>{{ question.description }}</p></span>\n    <p>Answers: {{ question._answers }}</p>\n    <div *ngFor = \"let answer of question._answers\">\n\n    </div>\n</div>\n"
+module.exports = "<div class=\"\" *ngIf=\"question\">\n    <div class=\"\">\n        <a [routerLink] = \"['/answer', question._id]\">Answer</a> || <a [routerLink] = \"['/home']\">Back</a>\n    </div>\n    <h2>{{ question.question }}</h2>\n    <span *ngIf = \"question.description\"><p>{{ question.description }}</p></span>\n    <p>Answers: {{ question._answers }}</p>\n    <div *ngFor = \"let answer of question._answers\">\n\n    </div>\n</div>\n"
 
 /***/ }),
 

@@ -37,4 +37,10 @@ export class QuestionService {
       .toPromise()
   }
 
+  answer(answer){
+      return this._http.post('/api/answers', answer)
+      .map((response: Response) => response.json())
+      .toPromise()
+  }
+
 }

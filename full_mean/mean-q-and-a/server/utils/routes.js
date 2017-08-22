@@ -1,6 +1,7 @@
 const users = require('./../controllers/users.js');
 const questions = require('./../controllers/questions.js');
-const path = require("path")
+const answers = require('./../controllers/answers.js');
+const path = require("path");
 
 
 module.exports = function (app) {
@@ -12,6 +13,7 @@ module.exports = function (app) {
 	app.post('/api/questions', questions.add);
 	app.get('/api/questions/:id', questions.showOne);
 	app.get('/api/logout', users.logout);
+	app.post('/api/answers', answers.add);
 
 	app.all("*", (req, res, next) => {
 		res.sendfile(path.resolve("./public/dist/index.html"));
