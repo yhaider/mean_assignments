@@ -1,0 +1,30 @@
+<div class="">
+    <form #addForm = "ngForm" method="post" (submit) = "addQuestion()">
+        <h3>New Question</h3>
+        <label>
+            New Question:<br>
+            <input
+                type="text"
+                name="question"
+                [(ngModel)] = "newq.question"
+                #question = "ngModel"
+                minLength = "10"
+                required>
+        </label><br>
+        <span *ngIf = "question.invalid">Please enter a question of at least 10 characters.</span><br>
+        <label>
+            Description (optional):<br>
+            <input
+                type="text"
+                name="description"
+                [(ngModel)] = "newq.description"
+                #description = "ngModel">
+        </label><br>
+        <span *ngIf = "description.invalid">Please enter a question of at least 10 characters.</span><br>
+        <input
+            type="submit"
+            name="submit"
+            value="Add"
+            [disabled] = "addForm.invalid">
+    </form>
+</div>
