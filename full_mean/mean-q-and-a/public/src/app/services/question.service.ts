@@ -43,4 +43,10 @@ export class QuestionService {
       .toPromise()
   }
 
+  getAnswers(questionid){
+      return this._http.get('/api/answers', questionid)
+      .map((response: Response) => response.json())
+      .toPromise()
+  }
+
 }

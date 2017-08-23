@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/answer/answer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"\" *ngIf = \"question\">\n    <form #answerForm = \"ngForm\" method=\"post\" (submit) = \"answer()\">\n        <h2>Answer:</h2>\n        <h3>{{ question.question }}</h3>\n        <label>\n            Your Answer:<br>\n            <input\n                type=\"text\"\n                name=\"answer\"\n                placeholder = \"Your answer...\"\n                [(ngModel)] = \"answer.answer\"\n                #answer = \"ngModel\"\n                required>\n        </label><br>\n\n        <label>\n            Supporting Details (optional):<br>\n            <input\n                type=\"text\"\n                name=\"extra\"\n                placeholder = \"Any details...\"\n                [(ngModel)] = \"answer.extra\"\n                #extra = \"ngModel\">\n        </label><br>\n        <input type=\"submit\" name=\"submit\" value=\"Submit\" [disabled] = \"answerForm.invalid\">\n    </form>\n    <a [routerLink] = \"['/home']\">Back</a><br>\n    {{ question | json }}<Br>\n    {{ user | json }}\n</div>\n"
+module.exports = "<div class=\"\" *ngIf = \"question\">\n    <form #answerForm = \"ngForm\" method=\"post\" (submit) = \"answerQuestion()\">\n        <h2>Answer:</h2>\n        <h3>{{ question.question }}</h3>\n        <label>\n            Your Answer:<br>\n            <input\n                type=\"text\"\n                name=\"answer\"\n                placeholder = \"Your answer...\"\n                [(ngModel)] = \"questionanswer.answer\"\n                #answer = \"ngModel\"\n                required>\n        </label><br>\n\n        <label>\n            Supporting Details (optional):<br>\n            <input\n                type=\"text\"\n                name=\"extra\"\n                placeholder = \"Any details...\"\n                [(ngModel)] = \"questionanswer.extra\"\n                #extra = \"ngModel\">\n        </label><br>\n        <input type=\"submit\" name=\"submit\" value=\"Submit\" [disabled] = \"answerForm.invalid\">\n    </form>\n    <a [routerLink] = \"['/home']\">Back</a><br>\n    {{ question | json }}<Br>\n    {{ user | json }}\n</div>\n"
 
 /***/ }),
 
@@ -66,12 +66,12 @@ var AnswerComponent = (function () {
         this._qs = _qs;
         this._route = _route;
         this._router = _router;
-        this.answer = {
+        this.questionanswer = {
             answer: "",
             extra: "",
-            user: this.user,
+            user: {},
             likes: 0,
-            _question: this.question
+            _question: ""
         };
     }
     AnswerComponent.prototype.ngOnInit = function () {
@@ -90,7 +90,9 @@ var AnswerComponent = (function () {
     };
     AnswerComponent.prototype.answerQuestion = function () {
         var _this = this;
-        this._qs.answer(this.answer)
+        this.questionanswer.user = this.user;
+        this.questionanswer._question = this.question._id;
+        this._qs.answer(this.questionanswer)
             .then(function (data) { return _this._router.navigateByUrl("/home"); })
             .catch(function (err) { return console.log(err); });
     };
@@ -684,6 +686,11 @@ var QuestionService = (function () {
             .map(function (response) { return response.json(); })
             .toPromise();
     };
+    QuestionService.prototype.getAnswers = function (questionid) {
+        return this._http.get('/api/answers', questionid)
+            .map(function (response) { return response.json(); })
+            .toPromise();
+    };
     return QuestionService;
 }());
 QuestionService = __decorate([
@@ -769,7 +776,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/show/show.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"\" *ngIf=\"question\">\n    <div class=\"\">\n        <a [routerLink] = \"['/answer', question._id]\">Answer</a> || <a [routerLink] = \"['/home']\">Back</a>\n    </div>\n    <h2>{{ question.question }}</h2>\n    <span *ngIf = \"question.description\"><p>{{ question.description }}</p></span>\n    <p>Answers: {{ question._answers }}</p>\n    <div *ngFor = \"let answer of question._answers\">\n\n    </div>\n</div>\n"
+module.exports = "<div class=\"\" *ngIf=\"question\">\n    <div class=\"\">\n        <a [routerLink] = \"['/answer', question._id]\">Answer</a> || <a [routerLink] = \"['/home']\">Back</a>\n    </div>\n    <h2>{{ question.question }}</h2>\n    <span *ngIf = \"question.description\"><p>{{ question.description }}</p></span>\n    <p>Answers: {{ question._answers }}</p>\n    <div *ngFor = \"let answer of answers\">\n        {{ answer.answer }}\n        {{ answer.user._id }}\n        {{ answer.likes }}\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -798,6 +805,7 @@ var ShowComponent = (function () {
         this._qs = _qs;
         this._route = _route;
         this._router = _router;
+        this.answers = [];
     }
     ShowComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -805,10 +813,23 @@ var ShowComponent = (function () {
             .switchMap(function (params) {
             return _this._qs.showOne(params.get('id'));
         })
-            .subscribe(function (question) { return _this.question = question; });
+            .subscribe(function (data) { return _this.question = data; });
+        console.log(this.question._answers);
     };
     ShowComponent.prototype.ngOnDestroy = function () {
         this.subscription.unsubscribe();
+    };
+    ShowComponent.prototype.generateArray = function () {
+        for (var x = 0; x < this.question._answers.length; x++) {
+            this.answers.push(this.question._answers[x]);
+        }
+        console.log(this.answers);
+    };
+    ShowComponent.prototype.getAnswers = function () {
+        var _this = this;
+        this._qs.getAnswers(this.question)
+            .then(function (data) { return _this.answers = data; })
+            .catch(function (err) { return console.log(err); });
     };
     return ShowComponent;
 }());

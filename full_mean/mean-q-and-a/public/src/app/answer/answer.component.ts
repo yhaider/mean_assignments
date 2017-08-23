@@ -13,13 +13,14 @@ export class AnswerComponent implements OnInit, OnDestroy {
     private user
     private subscription: any
     private question
-
-    private answer = {
+    private answer_answer
+    private answer_extra
+    private questionanswer = {
         answer: "",
         extra: "",
-        user: this.user,
+        user: {},
         likes: 0,
-        _question: this.question
+        _question: ""
     }
 
   constructor(
@@ -34,19 +35,26 @@ export class AnswerComponent implements OnInit, OnDestroy {
       .then(data => this.user = data)
       .catch(err => console.log(err))
 
+
       this.subscription = this._route.paramMap
       .switchMap(params => {
           return this._qs.showOne(params.get('id'))
       })
       .subscribe(question => this.question = question)
+
+
   }
 
   ngOnDestroy(){
       this.subscription.unsubscribe()
   }
 
+
+
   answerQuestion(){
-      this._qs.answer(this.answer)
+      this.questionanswer.user = this.user;
+      this.questionanswer._question = this.question._id
+      this._qs.answer(this.questionanswer)
       .then((data) => this._router.navigateByUrl(`/home`))
       .catch(err => console.log(err))
 

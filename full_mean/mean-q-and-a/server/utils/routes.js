@@ -14,6 +14,7 @@ module.exports = function (app) {
 	app.get('/api/questions/:id', questions.showOne);
 	app.get('/api/logout', users.logout);
 	app.post('/api/answers', answers.add);
+	app.get('/api/answers', answers.fetch);
 
 	app.all("*", (req, res, next) => {
 		res.sendfile(path.resolve("./public/dist/index.html"));

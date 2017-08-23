@@ -11,7 +11,7 @@ const AnswerSchema = new mongoose.Schema({
         required: false
     },
     user: {
-        type: String,
+        type: Object,
         required: [true, "Please associate a user with this answer."]
     },
 	likes: {

@@ -4,6 +4,7 @@ const Question = mongoose.model('Question');
 
 module.exports = {
     add: function (req, res) {
+        console.log(req.body)
         Question.findOne({id: req.body.user._id}, (err, question) => {
             if(err){
                 return res.status(500).json(err);
@@ -21,6 +22,14 @@ module.exports = {
                 })
             });
         });
+    },
 
+    fetch: function (req, res) {
+        Answer.find({_question: req.body}, (err, allanswers) => {
+            if(err) {
+                return res.status(500).json(err);
+            }
+            return res.json(all_answers)
+        })
     }
 }

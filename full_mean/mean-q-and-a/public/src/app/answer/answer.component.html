@@ -1,5 +1,5 @@
 <div class="" *ngIf = "question">
-    <form #answerForm = "ngForm" method="post" (submit) = "answer()">
+    <form #answerForm = "ngForm" method="post" (submit) = "answerQuestion()">
         <h2>Answer:</h2>
         <h3>{{ question.question }}</h3>
         <label>
@@ -8,7 +8,7 @@
                 type="text"
                 name="answer"
                 placeholder = "Your answer..."
-                [(ngModel)] = "answer.answer"
+                [(ngModel)] = "questionanswer.answer"
                 #answer = "ngModel"
                 required>
         </label><br>
@@ -19,7 +19,7 @@
                 type="text"
                 name="extra"
                 placeholder = "Any details..."
-                [(ngModel)] = "answer.extra"
+                [(ngModel)] = "questionanswer.extra"
                 #extra = "ngModel">
         </label><br>
         <input type="submit" name="submit" value="Submit" [disabled] = "answerForm.invalid">
