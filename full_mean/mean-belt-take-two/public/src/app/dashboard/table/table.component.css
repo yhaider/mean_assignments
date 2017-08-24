@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+.container {
+    margin-left: 80px;
+}
+
+th, td{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+th{
+    font: 100 17pt "Helvetica Neue", sans-serif;
+}
+
+td {
+    font: 100 13pt "Helvetica Neue", sans-serif;
+}
+button {
+    padding: 5px 10px 5px 10px;
+}

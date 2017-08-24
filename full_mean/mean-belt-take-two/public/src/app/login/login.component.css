@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+.login{
+    margin: auto;
+    text-align: center;
+}
+
+.login h2{
+    font: 100 20pt "Helvetica Neue", sans-serif;
+}
+
+.login label {
+    font: 100 15pt "Helvetica Neue", sans-serif;
+}
+
+span{
+    font: 100 13pt "Helvetica Neue", sans-serif;
+    font-style: italic;
+}
+
+button{
+    margin-top: 10px;
+    font: 100 10pt "Helvetica Neue", sans-serif;
+    padding: 5px 10px 5px 10px;
+}

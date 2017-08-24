@@ -1,0 +1,19 @@
+<div class="login">
+    <h2>Login</h2>
+    <form #loginForm = "ngForm" method="post" (submit) = "login()">
+        <label>Name:
+        <input
+            type="text"
+            name="name"
+            placeholder = "Enter your name..."
+            [(ngModel)] = "user.name"
+            #name = "ngModel"
+            required>
+        </label><br>
+        <button
+            type="submit"
+            name="submit"
+            [disabled] = "loginForm.invalid">Submit</button>
+    </form>
+    <span *ngIf = "name.invalid">Please enter a name.</span>
+</div>

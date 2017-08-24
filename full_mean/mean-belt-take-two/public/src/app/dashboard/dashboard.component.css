@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+.header h2{
+    font: 100 20pt "Helvetica Neue", sans-serif;
+}
+.header{
+    margin-bottom: 20px;
+}
+
+.logout {
+    padding: 5px 10px 5px 10px;
+    font: 100 10pt "Helvetica Neue", sans-serif;
+}
+
+.header a {
+    font: 100 10pt "Helvetica Neue", sans-serif;
+}
+
+.current{
+    font: 100 13pt "Helvetica Neue", sans-serif;
+}
+
+.current h4 {
+    font: 100 16pt "Helvetica Neue", sans-serif;
+}
+
+input[type=submit] {
+    font: 100 10pt "Helvetica Neue", sans-serif;
+}
+
+.topcontainer {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.searchbar {
+    margin-left: 30px;
+}

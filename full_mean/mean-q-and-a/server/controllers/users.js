@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
+
 module.exports = {
 	add: function (req, res) {
 		User.findOne({name: req.body.name}, (err, user) => {
@@ -8,6 +9,7 @@ module.exports = {
 				return res.status(401).json(err)
 			}
 			else if(user){
+				console.log(`Found user: ${user}`)
 				req.session.user = user
 				res.json({user: user})
 			}

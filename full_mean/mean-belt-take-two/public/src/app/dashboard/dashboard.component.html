@@ -1,0 +1,25 @@
+<div class="dashboard">
+    <div class="topcontainer">
+        <div class="header">
+            <h2>Welcome {{ name }}!</h2>
+            <a [routerLink] = "['/create']">Create a New Poll</a> || <a><span (click) = "logout()"><button type="button" class="logout">Logout</button></span></a>
+        </div>
+        <div class="current">
+            <h4>Current Polls:</h4>
+            <div class="searchbar">
+                <form #searchForm = "ngForm" method="post" (submit) = "searchPolls()">
+                    <label>
+                        Search:
+                        <input
+                            type="text"
+                            name="search"
+                            [(ngModel)] = "input.key"
+                            #search = "ngModel">
+                    </label>
+                    <input type="submit" name="submit" value="Submit" (submit) = "searchPolls()">
+                </form>
+            </div>
+        </div>
+    </div>
+    <app-table [displaypolls] = "displaypolls"></app-table>
+</div>

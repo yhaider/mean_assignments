@@ -1,0 +1,62 @@
+<div class="container">
+    <a [routerLink] = "['/dashboard']">Cancel</a>
+    <h2>Create a New Poll</h2>
+    <form #createForm = "ngForm" method="post" (submit) = "create()">
+        <label>
+            Question:
+            <input
+                type="text"
+                name="question"
+                [(ngModel)] = "newpoll.question"
+                #question = "ngModel"
+                minLength = "8"
+                required>
+            <span *ngIf = "question.invalid">Please ensure you enter a question of at least 8 characters.</span>
+        </label><br>
+        <label>
+            Option 1:
+            <input
+                type="text"
+                name="optionone"
+                [(ngModel)] = "newpoll.optionone"
+                #optionone = "ngModel"
+                minLength = "4"
+                required>
+            <span *ngIf = "optionone.invalid">Please ensure you enter an option of at least 4 characters.</span>
+        </label><br>
+        <label>
+            Option 2:
+            <input
+                type="text"
+                name="optiontwo"
+                [(ngModel)] = "newpoll.optiontwo"
+                #optiontwo = "ngModel"
+                minLength = "4"
+                required>
+            <span *ngIf = "optiontwo.invalid">Please ensure you enter an option of at least 4 characters.</span>
+        </label><br>
+        <label>
+            Option 3:
+            <input
+                type="text"
+                name="optionthree"
+                [(ngModel)] = "newpoll.optionthree"
+                #optionthree = "ngModel"
+                minLength = "4"
+                required>
+            <span *ngIf = "optionthree.invalid">Please ensure you enter an option of at least 4 characters.</span>
+        </label><br>
+        <label>
+            Option 4:
+            <input
+                type="text"
+                name="optionfour"
+                [(ngModel)] = "newpoll.optionfour"
+                #optionfour = "ngModel"
+                minLength = "4"
+                required>
+            <span *ngIf = "optionfour.invalid">Please ensure you enter an option of at least 4 characters.</span>
+        </label><br>
+        <button type="submit" name="submit" [disabled] = "createForm.invalid">Submit</button>
+    </form>
+</div>

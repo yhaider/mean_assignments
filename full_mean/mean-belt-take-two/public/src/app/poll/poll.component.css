@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+.container{
+    margin-left: 100px;
+}
+
+.header h3{
+    font: 100 20pt "Helvetica Neue", sans-serif;
+}
+.header p{
+    font: 100 15pt "Helvetica Neue", sans-serif;
+    margin-bottom: 20px;
+}
+
+.table{
+    margin-left: 50px;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid black;
+}
+th {
+    font: 100 17pt "Helvetica Neue", sans-serif;
+}
+td {
+    font: 100 13pt "Helvetica Neue", sans-serif;
+    text-align: center;
+}
+button {
+    padding: 5px 10px 5px 10px;
+}
+
+a{
+    font: 100 11pt "Helvetica Neue", sans-serif;
+    font-style: italic;
+}

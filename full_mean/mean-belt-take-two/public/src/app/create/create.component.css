@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: inherit;
+}
+
+.container {
+    margin-left: 80px;
+    width: 900px;
+}
+
+a{
+    margin-left: 570px;
+    font: 100 10pt "Helvetica Neue", sans-serif;
+}
+
+h2{
+    font: 100 20pt "Helvetica Neue", sans-serif;
+}
+
+label {
+    font: 100 13pt "Helvetica Neue", sans-serif;
+}
+span {
+    font: 100 11pt "Helvetica Neue", sans-serif;
+    font-style: italic;
+}
+
+button{
+    font: 100 10pt "Helvetica Neue", sans-serif;
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
+}
